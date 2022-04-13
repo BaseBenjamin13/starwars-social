@@ -1,0 +1,25 @@
+
+April 16✅
+    setup file structure for everything   ✅
+    setup connection server and movies main page ✅
+
+
+April 17
+    setup main file structure for TvShows ✅
+    setup main route for TvShows ✅
+    Make simple seed data for tvShows ✅
+    make simple model for tvShows ✅
+    send tvShows json data to tvShows main read route ✅
+    send tvShows json data to ejs and render img and name ✅
+    link dropdown btns to available pages no filter yet ✅
+    setup main files and route for games
+
+    
+
+
+
+
+
+
+
+    link all dropdown buttons to assigned pages

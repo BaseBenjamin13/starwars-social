@@ -1,16 +1,17 @@
 
 const express = require('express');
-//model
+const TvShows = require('../db/models/tv-showM');
 const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    res.render('./tv-shows/tv-shows');
+    TvShows.find({})
+        .then((tvShows) => {
+            res.render('./tv-shows/tv-shows', {tvShows: tvShows});
+        })
+        .catch(console.error)
+    // res.render('./tv-shows/tv-shows');
 })
-
-
-
-
 
 
 
