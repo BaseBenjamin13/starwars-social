@@ -25,8 +25,8 @@ const TvShows = new mongoose.Schema({
         trailer: String
     },
     likes: Number, 
-    comments: String, 
-}, {timestamp: true} )
+    comments: [String], 
+}, {timestamp: true} ) 
 
 const GameSchema = new mongoose.Schema({
     title: {type: String, required: true},

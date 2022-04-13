@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     Movies.find({})
         .then((movies) => {
-            res.render('movies', { movies: movies })
+            res.render('./movies/movies', { movies: movies })
         })
 })
 

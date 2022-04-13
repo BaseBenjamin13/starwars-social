@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Clone Wars",
+        "seasons": 7,
+        "episodes": 133,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE_EbKrjeTz2Zd9MeLwCStOhrf_rXYgbbleG8_FEl36tf8qcRS",
+        "links": {
+            "buy": null,
+            "stream": null,
+            "trailer": null
+        },
+        "likes": 50000000, 
+        "comments": "Best show ever made" 
+    },
+    {
+        "title": "The Mandalorian",
+        "seasons": 2,
+        "episodes": 16,
+        "img": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+        "links": {
+            "buy": null,
+            "stream": null,
+            "trailer": null
+        },
+        "likes": 20030, 
+        "comments": ["great show, little slow at times but would recommend", "good show loved it", "love this show"]
+    }
+]
