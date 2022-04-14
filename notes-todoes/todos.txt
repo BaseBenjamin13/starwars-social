@@ -17,7 +17,7 @@ April 17 ✅
     link dropdown btns to available pages no filter yet ✅
    
 April 18
-    setup main files and route for games.
+    setup main files and route for games. ✅
     link all dropdown buttons to assigned pages.
     add grid layout for all pages. ✅
     add cool star wars type font. Maybe: Bebas Neue
