@@ -1,10 +1,13 @@
 
+lookup:
+    favicon
+
 April 16✅
     setup file structure for everything   ✅
     setup connection server and movies main page ✅
 
 
-April 17
+April 17 ✅
     setup main file structure for TvShows ✅
     setup main route for TvShows ✅
     Make simple seed data for tvShows ✅
@@ -12,14 +15,12 @@ April 17
     send tvShows json data to tvShows main read route ✅
     send tvShows json data to ejs and render img and name ✅
     link dropdown btns to available pages no filter yet ✅
-    setup main files and route for games
+   
+April 18
+    setup main files and route for games.
+    link all dropdown buttons to assigned pages.
+    add grid layout for all pages. ✅
+    add cool star wars type font. Maybe: Bebas Neue
 
-    
-
-
-
-
-
-
-
-    link all dropdown buttons to assigned pages
+April 19
+    refactor routes to use /: for main pages.
