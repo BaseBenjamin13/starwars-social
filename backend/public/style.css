@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    color: yellow;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(20vw, max-content));
+    grid-gap: 16px;
+    justify-content: space-around;
+}

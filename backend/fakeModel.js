@@ -38,5 +38,5 @@ const GameSchema = new mongoose.Schema({
         trailer: String
     },
     likes: Number, 
-    comments: String, 
+    comments: [String], 
 }, {timestamp: true} )

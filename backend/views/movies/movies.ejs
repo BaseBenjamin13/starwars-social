@@ -1,11 +1,13 @@
+<link rel="stylesheet" href="style.css"/>
 
+<div class="container">
+    <ul>
+        <% for(let i=0; i < movies.length; i++){ %>
+            <div class="" style="width: 25vw">
+                <h1><%=movies[i].title %></h1>
+                <img src="<%=movies[i].img %>" alt="" class="img-fluid img-thumbnail">
+            </div>
+        <% } %>     
+    </ul>
 
-<ul>
-    <% for(let i=0; i < movies.length; i++){ %>
-        <div class="container-sm img-thumbnail" style="width: 25vw">
-            <h1><%=movies[i].title %></h1>
-            <img src="<%=movies[i].img %>" alt="" class="">
-        </div>
-    <% } %>     
-</ul>
-
+</div>

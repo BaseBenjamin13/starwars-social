@@ -7,6 +7,9 @@ const ejsLayouts = require('express-ejs-layouts');
 const Movies = require('./db/models/movieM');
 const app = express();
 
+
+
+app.use(express.static('public')); // to use css imgs in public folder
 app.set('view engine', 'ejs');
 
 app.use(ejsLayouts);
