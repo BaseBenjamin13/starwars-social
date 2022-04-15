@@ -5,8 +5,8 @@
 <div class="container">
     
     <% for(let i=0; i < games.length; i++){ %>
-        <div class="container-sm " style="width: 25vw">
-            <h1 class="primary"><%=games[i].title %></h1>
+        <div class="item container-sm" style="width: 25vw">
+            <h1><%=games[i].title %></h1>
             <img src="<%=games[i].img %>" alt="" class="img-fluid img-thumbnail">
         </div>
     <% } %>     

@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    color: yellow;
+    color: gold;
 }
 .container {
     display: grid;
@@ -8,4 +8,18 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(20vw, max-content));
     grid-gap: 16px;
     justify-content: space-around;
+}
+
+.item {
+    border: 5px gold solid;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#brandName {
+    padding: 5px;
+    font-family: 'Bebas Neue', cursive;
 }

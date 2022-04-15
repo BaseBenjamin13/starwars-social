@@ -1,10 +1,38 @@
 [
     {
+        "title": "The Phantom Menace",
+        "episode": "I",
+        "img": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg",
+        "links": {
+            "buy": "https://www.starwars.com/films/star-wars-episode-i-the-phantom-menace",
+            "rent": null,
+            "trailer": "https://www.youtube.com/watch?v=bD7bpG-zDJQ"
+        },
+        "likes": 34456,
+        "comments": ["good story", "pretty good movie"]
+    },
+    {
+        "title": "Attack of the Clones",
+        "episode": "II",
+        "img": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oZNPzxqM2s5DyVWab09NTQScDQt.jpg",
+        "links": {
+            "buy": "https://www.starwars.com/films/star-wars-episode-ii-attack-of-the-clones",
+            "rent": null,
+            "trailer": "https://www.youtube.com/watch?v=CO2OLQ2kiq8"
+        },
+        "likes": 50400,
+        "comments": ["better then episode I"]
+    },
+    {
         "title": "Revenge of the Sith",
         "episode": "III",
         "img": "https://m.media-amazon.com/images/I/71WgjTKJ00L._AC_SY679_.jpg",
-        "links": null,
-        "likes": 50000,
-        "comments": null
+        "links": {
+            "buy": "https://www.starwars.com/films/star-wars-episode-iii-revenge-of-the-sith",
+            "rent": null,
+            "trailer": "https://www.youtube.com/watch?v=5UnjrG_N8hU"
+        },
+        "likes": 900060,
+        "comments": ["amazing movie", "better then episode I and II"]
     }
 ]
