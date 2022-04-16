@@ -17,7 +17,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 25vw;
 }
+
 
 #brandName {
     padding: 5px;
