@@ -5,6 +5,7 @@
     
     <% for(let i=0; i < tvShows.length; i++){ %>
         <div class="item container-sm " style="width: 25vw">
+            <a href='/tv-shows/<%=tvShows[i]._id %>/tvshow'>
             <h1><%=tvShows[i].title %></h1>
             <img src="<%=tvShows[i].img %>" alt="" class="img-fluid img-thumbnail">
         </div>

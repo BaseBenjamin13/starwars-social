@@ -18,9 +18,17 @@ April 17 ✅
    
 April 18
     setup main files and route for games. ✅
-    link all dropdown buttons to assigned pages.
+    link all dropdown buttons to assigned pages. ✅
     add grid layout for all pages. ✅
-    add cool star wars type font. Maybe: Bebas Neue
+    add cool star wars type font. Maybe: Bebas Neue ✅
 
 April 19
-    refactor routes to use /: for main pages.
+    Optional: refactor routes to use /: for main pages.
+    make id route to select single movie. ✅
+        rendered id data
+        ERROR: renders data but then server crashes and cannot refresh
+        CAST ERROR: Cast to ObjectId failed for value "style.css" (type string) at path "_id" for model "Movie"
+        it seams as if my style.css is being passed into movie.id, weird.
+        i can res.json the data, so its a "front-end" issue
+    make id route for tv-Shows. ✅
+    make id route for games. ✅

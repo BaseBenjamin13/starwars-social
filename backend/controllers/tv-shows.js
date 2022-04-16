@@ -13,7 +13,15 @@ router.get('/', (req, res) => {
     // res.render('./tv-shows/tv-shows');
 })
 
-
+router.get('/:grab/tvshow', (req, res) => {
+    const id = req.params.grab;
+    TvShows.findById(id)
+        .then((tvShow) => {
+            // res.json(movie)
+            res.render('./tv-shows/tv-show', { tvShow: tvShow})
+        })
+        .catch(console.error)
+})
 
 
 
