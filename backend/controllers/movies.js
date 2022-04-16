@@ -11,16 +11,28 @@ router.get('/', (req, res) => {
         .then((movies) => {
             res.render('./movies/movies', { movies: movies })
         })
+        .catch(console.error)
 })
 
-router.get('/:id', (req, res) => {
-    const id = req.params.id;
-    Movies.findOne({ _id: id })
+router.get('/:grab/movie', (req, res) => {
+    const id = req.params.grab;
+    Movies.findById(id)
         .then((movie) => {
             // res.json(movie)
             res.render('./movies/movie', { movie: movie })
         })
+        .catch(console.error)
 })
+
+// router.get('/:id', (req, res) => {
+//     const id = req.params.id;
+//     Movies.findById(id)
+//         .then((movie) => {
+//             // res.json(movie)
+//             res.render('./movies/movie', { movie: movie })
+//         })
+//         .catch(console.error)
+// })
 
 
 

@@ -1,11 +1,11 @@
 
-<link rel="stylesheet" type href="style.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 
 <div class="container">
 
     <% for(let i=0; i < movies.length; i++){ %>
-        <div class="item container-sm" style="width: 25vw">
-            <a href='movies/<%=movies[i]._id %>'>
+        <div class="item container-sm" >
+            <a href='/movies/<%=movies[i]._id %>/movie'>
                 <h1><%=movies[i].title %></h1>
             </a>
             <img src="<%=movies[i].img %>" alt="" class=" img-fluid img-thumbnail ">
