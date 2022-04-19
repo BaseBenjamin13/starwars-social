@@ -19,12 +19,27 @@
 
         <br>
 
-        <div class="container">
-            <% for(let i=0; i < tvShow.comments.length; i++){ %>
-                <div>
-                        <h1><%=tvShow.comments[i] %></h1>
-                </div>
-            <% } %>     
+</div>
+
+<br>
+
+<div>
+
+    <form action="#postroute" method="POST">
+        <div class="mb-3 item">
+            <label for="comments" class="form-label">Comment on this Tv-Show</label>
+            <textarea class="form-control" id="comments" rows="3">Enter comment here</textarea>
         </div>
+        <input type="submit" class="btn btn-primary" />
+        <a href="#homepage" class="btn btn-secondary">Cancel</a>
+    </form>
+
+    <div>
+        <% for(let i=0; i < tvShow.comments.length; i++){ %>
+            <div>
+                    <h1><%=tvShow.comments[i] %></h1>
+            </div>
+        <% } %>     
+    </div>
 
 </div>
