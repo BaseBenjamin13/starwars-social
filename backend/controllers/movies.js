@@ -27,7 +27,7 @@ router.get('/:grab/movie', (req, res) => {
 router.put('/:grab/movie', (req, res) => {
     const id = req.params.grab;
     Movies.findOneAndUpdate({ _id: id}, {$push: {comments: req.body.comments}})
-        .then((movie) => {
+        .then( () => {
             // res.render('./movies/movie', { movie: movie });
             Movies.findById(id)
                 .then((movie) => {

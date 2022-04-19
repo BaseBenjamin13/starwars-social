@@ -23,7 +23,17 @@ router.get('/:grab/game', (req, res) => {
         .catch(console.error)
 })
 
-
+router.put('/:grab/game', (req, res) => {
+    const id = req.params.grab;
+    Games.findOneAndUpdate({ _id: id}, {$push: {comments: req.body.comments}})
+        .then( () => {
+            Games.findById(id)
+                .then((game) => {
+                    res.render('./games/game', { game: game })
+                })
+        })
+        .catch(console.error);
+})
 
 
 

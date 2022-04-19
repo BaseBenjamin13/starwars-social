@@ -20,10 +20,10 @@
 </div>
 <br>
 <div>
-    <form action="#postroute" method="POST">
+    <form action="/games/<%=game._id %>/game/?_method=put" method="POST">
         <div class="mb-3 item">
             <label for="comments" class="form-label">Comment on this Game</label>
-            <textarea class="form-control" id="comments" rows="3">Enter comment here</textarea>
+            <textarea class="form-control" name="comments" id="comments" rows="3">Enter comment here</textarea>
         </div>
         <input type="submit" class="btn btn-primary" />
         <a href="#homepage" class="btn btn-secondary">Cancel</a>

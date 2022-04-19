@@ -23,7 +23,18 @@ router.get('/:grab/tvshow', (req, res) => {
         .catch(console.error)
 })
 
-
+router.put('/:grab/tvshow', (req, res) => {
+    const id = req.params.grab;
+    TvShows.findOneAndUpdate({ _id: id}, {$push: {comments: req.body.comments}})
+        .then( () => {
+            TvShows.findById(id)
+                .then((tvShow) => {
+                    // res.json(movie)
+                    res.render('./tv-shows/tv-show', { tvShow: tvShow })
+                })
+        })
+        .catch(console.error);
+})
 
 
 
