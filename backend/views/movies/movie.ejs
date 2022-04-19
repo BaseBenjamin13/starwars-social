@@ -25,19 +25,19 @@
         <label for="comments">Comment on this movie</label>
         <textarea name="comments" id="comments" rows="3" cols="40">Enter comment here</textarea>
     </div> -->
-    <form action="#postroute" method="POST">
+    <form action="/movies/<%=movie._id %>/movie/?_method=put" method="POST">
         <div class="mb-3 item">
             <label for="comments" class="form-label">Comment on this Movie</label>
-            <textarea class="form-control" id="comments" rows="3">Enter comment here</textarea>
+            <textarea class="form-control" name="comments" id="comments" rows="3">Enter comment here</textarea>
         </div>
         <input type="submit" class="btn btn-primary" />
-        <a href="#homepage" class="btn btn-secondary">Cancel</a>
+        <!-- <a href="#homepage" class="btn btn-secondary">Cancel</a> -->
     </form>
 
     <div>
         <% for(let i=0; i < movie.comments.length; i++){ %>
             <div>
-                <h1><%=movie.comments[i] %></h1>
+                <h3><%=movie.comments[i] %></h3>
             </div>
         <% } %> 
     </div>

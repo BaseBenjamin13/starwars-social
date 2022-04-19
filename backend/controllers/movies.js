@@ -24,6 +24,22 @@ router.get('/:grab/movie', (req, res) => {
         .catch(console.error)
 })
 
+router.put('/:grab/movie', (req, res) => {
+    const id = req.params.grab;
+    Movies.findOneAndUpdate({ _id: id}, {$push: {comments: req.body.comments}})
+        .then((movie) => {
+            // res.render('./movies/movie', { movie: movie });
+            Movies.findById(id)
+                .then((movie) => {
+                    // res.json(movie)
+                    res.render('./movies/movie', { movie: movie })
+                })
+        })
+        .catch(console.error);
+})
+
+
+
 // router.get('/:id', (req, res) => {
 //     const id = req.params.id;
 //     Movies.findById(id)
