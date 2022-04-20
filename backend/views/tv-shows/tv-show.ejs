@@ -38,6 +38,9 @@
         <% for(let i=0; i < tvShow.comments.length; i++){ %>
             <div>
                     <h3><%=tvShow.comments[i] %></h3>
+                    <form action="/tv-shows/<%=tvShow._id %>/tvshow/<%=tvShow.comments[i] %>/?_method=put" method="POST" class="d-inline">
+                        <input type="submit" value="Delete" name="delete" class="btn btn-danger" />
+                    </form>
             </div>
         <% } %>     
     </div>

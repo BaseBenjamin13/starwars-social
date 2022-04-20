@@ -1,0 +1,67 @@
+
+lookup:
+    favicon
+
+Remake Better: 
+    DELETE: delete comment by using index number.
+        tried and failed, come back to it.
+
+April 12✅
+    setup file structure for everything   ✅
+    setup connection server and movies main page ✅
+
+
+April 13 ✅
+    setup main file structure for TvShows ✅
+    setup main route for TvShows ✅
+    Make simple seed data for tvShows ✅
+    make simple model for tvShows ✅
+    send tvShows json data to tvShows main read route ✅
+    send tvShows json data to ejs and render img and name ✅
+    link dropdown btns to available pages no filter yet ✅
+   
+April 14 ✅
+    setup main files and route for games. ✅
+    link all dropdown buttons to assigned pages. ✅
+    add grid layout for all pages. ✅
+    add cool star wars type font. Maybe: Bebas Neue ✅
+
+April 15 ✅
+    Optional: refactor routes to use /: for main pages.
+    make id route to select single movie. ✅
+        rendered id data
+        ERROR: renders data but then server crashes and cannot refresh
+        CAST ERROR: Cast to ObjectId failed for value "style.css" (type string) at path "_id" for model "Movie"
+        it seams as if my style.css is being passed into movie.id, weird.
+        i can res.json the data, so its a "front-end" issue
+    make id route for tv-Shows. ✅
+    make id route for games. ✅
+    render links on single movie page. ✅
+    render links on single tv-show page. ✅
+    render links on single game page. ✅
+
+April 16
+    SICK
+April 17
+    SICK
+
+April 18
+    display comments into movies/tv-shows/games pages using for loop or foreach. ✅
+    above comments, make input textarea to add comments. ✅
+    make functioning submit button for comments ✅
+        bigger than i thought.
+        NOT the same as creating a new object/document because im just creating a new value inside an array 
+        inside of that object/data so do i need to movie.comments.create() 
+        OR Movie.update(id: id, {comments: new Comment})
+        fix needing to refresh page after adding comment, ✅
+            answer: refind data .then res.render again
+
+April 19
+    fix bug:
+        everytime you refresh the page another comment is pushed to comments.
+    add comments and create functionality to tv-show and game. ✅
+    delete route for comments. ✅
+
+April 20
+    add delete route on tv-show and game. ✅
+    syle links to right side.

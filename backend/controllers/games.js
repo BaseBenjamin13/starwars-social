@@ -23,6 +23,7 @@ router.get('/:grab/game', (req, res) => {
         .catch(console.error)
 })
 
+//CREATE
 router.put('/:grab/game', (req, res) => {
     const id = req.params.grab;
     Games.findOneAndUpdate({ _id: id}, {$push: {comments: req.body.comments}})
@@ -30,6 +31,24 @@ router.put('/:grab/game', (req, res) => {
             Games.findById(id)
                 .then((game) => {
                     res.render('./games/game', { game: game })
+                })
+        })
+        .catch(console.error);
+})
+
+//DELETE
+router.put('/:grab/game/:com', (req, res) => {
+    const id = req.params.grab;
+    const com = req.params.com;
+    // const commentsIndex = `comments.${com}`;
+    Games.findOneAndUpdate({ _id: id}, {$pull: { comments: com }})
+        .then( () => {
+            // res.redirect('./movies/movie')
+            Games.findById(id)
+                .then((game) => {
+                    // res.json(movie)
+                    res.render('./games/game', { game: game })
+                    // res.redirect('./movies/movie')
                 })
         })
         .catch(console.error);

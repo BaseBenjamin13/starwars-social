@@ -33,6 +33,9 @@
         <% for(let i=0; i < game.comments.length; i++){ %>
             <div>
                     <h3><%=game.comments[i] %></h3>
+                    <form action="/games/<%=game._id %>/game/<%=game.comments[i] %>/?_method=put" method="POST" class="d-inline">
+                        <input type="submit" value="Delete" name="delete" class="btn btn-danger" />
+                    </form>
             </div>
         <% } %>     
     </div>

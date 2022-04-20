@@ -41,9 +41,11 @@ router.put('/:grab/movie', (req, res) => {
 })
 
 //DELETE
-router.put('/:grab/movie/:comment', (req, res) => {
+router.put('/:grab/movie/:com', (req, res) => {
     const id = req.params.grab;
-    Movies.findOneAndUpdate({ _id: id}, {$pull: {comments: req.params.comment}})
+    const com = req.params.com;
+    // const commentsIndex = `comments.${com}`;
+    Movies.findOneAndUpdate({ _id: id}, {$pull: { comments: com }})
         .then( () => {
             // res.redirect('./movies/movie')
             Movies.findById(id)

@@ -1,0 +1,14 @@
+
+
+Dry routes:
+    use params to load file
+    you can send app.get('/:pagename')
+    OR app.get('/:pagename/:id')
+    pagename = req.params.pagename
+    res.reender(pagename, data)
+
+You can use if/else in routes:
+    if (user exists) 
+    res.render profile page
+    else res.send account not found 
+    option to go back to homepage
