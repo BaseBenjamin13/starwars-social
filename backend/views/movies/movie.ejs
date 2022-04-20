@@ -38,6 +38,9 @@
         <% for(let i=0; i < movie.comments.length; i++){ %>
             <div>
                 <h3><%=movie.comments[i] %></h3>
+                <form action="/movies/<%=movie._id %>/movie/<%=movie.comments[i] %>/?_method=put" method="POST" class="d-inline">
+                    <input type="submit" value="Delete" name="delete" class="btn btn-danger" />
+                </form>
             </div>
         <% } %> 
     </div>
