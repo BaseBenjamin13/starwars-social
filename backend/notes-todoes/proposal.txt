@@ -2,18 +2,18 @@ Your project idea
 Star Wars Social. Where all star wars fans come to unite. All star wars fans big and small can come to Star Wars Social to talk about, like, review and make favorites of all movies, shows, and games.
 
 MVP
-have a page for all SW movies.
-have a page for all SW tv-shows.
-have a page for all SW games.
-have a like button.
+have a page for all SW movies. ✅
+have a page for all SW tv-shows. ✅
+have a page for all SW games. ✅
+have a like button. ✅
 have filter options for all 3 main pages, filter by most likes or most recent.
-once a movie/tv-show/game is selected you will be able to comment, view links to buy/stream, and load trailer.
+once a movie/tv-show/game is selected you will be able to comment, view links to buy/stream, and load trailer. ✅
 full CRUD on comments:
 
-leave a review/comment on any post movie/tv-show/game.
-comments will show on page.
+leave a review/comment on any post movie/tv-show/game. ✅
+comments will show on page. ✅
 update a review/comment.
-delete a review/comment.
+delete a review/comment. ✅
 ^^^^^^^^^^^^^^^^^^^
 have profile where you can add favorites.
 Stretch Goals

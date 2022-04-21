@@ -67,3 +67,10 @@ April 20
     make all links open in new tab, target="_blank" ✅
     syle links to right side. ✅
     add like button functionality ✅
+
+April 21
+    fix refresh bug for likes. ✅
+    make route for profile page
+    make profile.ejs      
+    research filter options, rendering in certaint order on screen.
+    setup profile container with placeholder img, name, info. 
