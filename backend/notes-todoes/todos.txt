@@ -70,6 +70,9 @@ April 20
 
 April 21
     fix refresh bug for likes. ✅
+    add all styling from movies to tv-shows and game. ✅
+    add likes system to tv-shows and game. ✅
+    fix all refresh errors, comment/delete with redirect 
     make route for profile page
     make profile.ejs      
     research filter options, rendering in certaint order on screen.

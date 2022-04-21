@@ -2,7 +2,7 @@
 
 <h1>Game</h1>
 
-<div class="container">
+<div class="singleContainer">
 
         <div class="item container-sm" >
             <h1><%=game.title %></h1>
@@ -10,27 +10,31 @@
             <img src="<%=game.img %>" alt="" class=" img-fluid img-thumbnail ">
         </div>
 
-        <div>
-            <a href="<%=game.links.buy %>" target="_blank">BUY HERE</a>
+        <div class="infoDiv">
+            <a href="<%=game.links.buy %>" target="_blank"><button class="btn-primary">BUY HERE</button></a>
             <br>
-            <a href="<%=game.links.trailer %>" target="_blank">View Trailer: no link yet</a>
+            <p>this is info about the game</p>
+            <br>
+            <a href="<%=game.links.trailer %>" target="_blank"><button class="btn-primary">TRAILER</button></a>
+            <br>
+            <h2><a href="/games/<%=game._id %>/game/liked"><button class="btn-success">Like</button></a> : <%=game.likes %></h2>
         </div>
 
         <br>
 </div>
 <br>
-<div>
+<div class="commentContainer">
     <form action="/games/<%=game._id %>/game/?_method=put" method="POST">
-        <div class="mb-3 item">
+        <div class="comment-section item">
             <label for="comments" class="form-label">Comment on this Game</label>
-            <textarea class="form-control" name="comments" id="comments" rows="3">Enter comment here</textarea>
+            <textarea class="" name="comments" id="comments" rows="3">Enter comment here</textarea>
         </div>
         <input type="submit" class="btn btn-primary" />
     </form>
 
     <div>
         <% for(let i=0; i < game.comments.length; i++){ %>
-            <div>
+            <div class="comment-section item">
                     <h3><%=game.comments[i] %></h3>
                     <form action="/games/<%=game._id %>/game/<%=game.comments[i] %>/?_method=put" method="POST" class="d-inline">
                         <input type="submit" value="Delete" name="delete" class="btn btn-danger" />

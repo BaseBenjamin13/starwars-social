@@ -55,5 +55,15 @@ router.put('/:grab/game/:com', (req, res) => {
 })
 
 
+// add likes 
+router.get('/:grab/game/liked', (req, res) => {
+    const id = req.params.grab;
+    Games.findByIdAndUpdate(id, {$inc: {likes: +1}})
+        .then( () => {
+            res.redirect(`/games/${id}/game`)
+        })
+        .catch(console.error)
+})
+
 
 module.exports = router;

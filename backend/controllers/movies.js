@@ -61,7 +61,7 @@ router.put('/:grab/movie/:com', (req, res) => {
 router.get('/:grab/movie/liked', (req, res) => {
     const id = req.params.grab;
     Movies.findByIdAndUpdate(id, {$inc: {likes: +1}})
-        .then( (movie) => {
+        .then( () => {
             // res.render('./movies/movie', { movie: movie })
             res.redirect(`/movies/${id}/movie`)
         })

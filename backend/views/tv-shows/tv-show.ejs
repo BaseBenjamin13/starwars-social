@@ -3,7 +3,7 @@
 
 <h1>Tv-Show</h1>
 
-<div class="container">
+<div class="singleContainer">
 
         <div class="item container-sm" >
             <h1><%=tvShow.title %></h1>
@@ -11,10 +11,14 @@
             <img src="<%=tvShow.img %>" alt="" class=" img-fluid img-thumbnail ">
         </div>
 
-        <div>
-            <a href="<%=tvShow.links.buy %>" target="_blank">BUY HERE: no link yet</a>
+        <div class="infoDiv">
+            <a href="<%=tvShow.links.buy %>" target="_blank"><button class="btn-primary">BUY HERE</button></a>
             <br>
-            <a href="<%=tvShow.links.trailer %>" target="_blank">View Trailer: no link yet</a>
+            <p>this is some info about the movie</p>
+            <br>
+            <a href="<%=tvShow.links.trailer %>" target="_blank"><button class="btn-primary">TRAILER</button></a>
+            <br>
+            <h2><a href="/tv-shows/<%=tvShow._id %>/tvshow/liked"><button class="btn-success">Like</button></a> : <%=tvShow.likes %></h2>
         </div>
 
         <br>
@@ -23,12 +27,12 @@
 
 <br>
 
-<div>
+<div class="commentContainer">
 
     <form action="/tv-shows/<%=tvShow._id %>/tvshow/?_method=put" method="POST">
-        <div class="mb-3 item">
+        <div class="comment-section item">
             <label for="comments" class="form-label">Comment on this Tv-Show</label>
-            <textarea class="form-control" name="comments" id="comments" rows="3">Enter comment here</textarea>
+            <textarea class="" name="comments" id="comments" rows="3">Enter comment here</textarea>
         </div>
         <input type="submit" class="btn btn-primary" />
         <!-- <a href="#homepage" class="btn btn-secondary">Cancel</a> -->
@@ -36,7 +40,7 @@
 
     <div>
         <% for(let i=0; i < tvShow.comments.length; i++){ %>
-            <div>
+            <div class="comment-section item">
                     <h3><%=tvShow.comments[i] %></h3>
                     <form action="/tv-shows/<%=tvShow._id %>/tvshow/<%=tvShow.comments[i] %>/?_method=put" method="POST" class="d-inline">
                         <input type="submit" value="Delete" name="delete" class="btn btn-danger" />
