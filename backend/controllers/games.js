@@ -13,6 +13,15 @@ router.get('/', (req, res) => {
         .catch(console.error);
 })
 
+//filter most liked games
+router.get('/most-liked-games', (req, res) => {
+    Games.aggregate([{ $sort: { likes: -1}}])
+        .then((games) => {
+            res.render('./games/most-liked-games', { games : games })
+        })
+        .catch(console.error);
+})
+
 router.get('/:grab/game', (req, res) => {
     const id = req.params.grab;
     Games.findById(id)

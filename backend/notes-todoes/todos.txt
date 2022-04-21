@@ -77,6 +77,7 @@ April 21
     make profile.ejs ✅ commited
     research filter options, rendering in certaint order on screen. ✅
     add filter by most likes. ✅ commited
+    add filter option to tv-shows and games. ✅ commited
 
 April 22
     setup profile container with placeholder img, name, info. 

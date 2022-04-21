@@ -13,6 +13,15 @@ router.get('/', (req, res) => {
     // res.render('./tv-shows/tv-shows');
 })
 
+//filter most liked tv shows
+router.get('/most-liked-tvshow', (req, res) => {
+    TvShows.aggregate([{ $sort: { likes: -1}}])
+        .then((tvShows) => {
+            res.render('./tv-shows/most-liked-tvshow', { tvShows: tvShows })
+        })
+        .catch(console.error);
+})
+
 router.get('/:grab/tvshow', (req, res) => {
     const id = req.params.grab;
     TvShows.findById(id)
