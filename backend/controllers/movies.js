@@ -23,6 +23,17 @@ router.get('/:grab/movie', (req, res) => {
         .catch(console.error)
 })
 
+// add likes 
+router.get('/:grab/movie/liked', (req, res) => {
+    const id = req.params.grab;
+    Movies.findByIdAndUpdate(id, {$inc: {likes: +1}})
+        .then( () => {
+            // res.render('./movies/movie', { movie: movie })
+            res.redirect(`/movies/${id}/movie`)
+        })
+        .catch(console.error)
+})
+
 //CREATE
 router.put('/:grab/movie', (req, res) => {
     const id = req.params.grab;
@@ -59,16 +70,7 @@ router.put('/:grab/movie/:com', (req, res) => {
         .catch(console.error);
 })
 
-// add likes 
-router.get('/:grab/movie/liked', (req, res) => {
-    const id = req.params.grab;
-    Movies.findByIdAndUpdate(id, {$inc: {likes: +1}})
-        .then( () => {
-            // res.render('./movies/movie', { movie: movie })
-            res.redirect(`/movies/${id}/movie`)
-        })
-        .catch(console.error)
-})
+
 // Movies.findByIdAndUpdate(id, {$inc: {likes: +1}})
 
 

@@ -72,8 +72,8 @@ April 21
     fix refresh bug for likes. ✅
     add all styling from movies to tv-shows and game. ✅
     add likes system to tv-shows and game. ✅ commited
-    fix all refresh errors, comment/delete with redirect ✅
-    make route for profile page
-    make profile.ejs      
+    fix all refresh errors, comment/delete with redirect ✅ commited
+    make route for profile page and controller. ✅
+    make profile.ejs ✅
     research filter options, rendering in certaint order on screen.
     setup profile container with placeholder img, name, info. 

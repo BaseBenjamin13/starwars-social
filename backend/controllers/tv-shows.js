@@ -23,6 +23,16 @@ router.get('/:grab/tvshow', (req, res) => {
         .catch(console.error)
 })
 
+// add likes 
+router.get('/:grab/tvshow/liked', (req, res) => {
+    const id = req.params.grab;
+    TvShows.findByIdAndUpdate(id, {$inc: {likes: +1}})
+        .then( () => {
+            res.redirect(`/tv-shows/${id}/tvshow`)
+        })
+        .catch(console.error)
+})
+
 //CREATE
 router.put('/:grab/tvshow', (req, res) => {
     const id = req.params.grab;
@@ -56,15 +66,7 @@ router.put('/:grab/tvshow/:com', (req, res) => {
 })
 
 
-// add likes 
-router.get('/:grab/tvshow/liked', (req, res) => {
-    const id = req.params.grab;
-    TvShows.findByIdAndUpdate(id, {$inc: {likes: +1}})
-        .then( () => {
-            res.redirect(`/tv-shows/${id}/tvshow`)
-        })
-        .catch(console.error)
-})
+
 
 
 

@@ -8,6 +8,7 @@ require('ejs');
 const movieController = require('./controllers/movies');
 const tvshowController = require('./controllers/tv-shows');
 const gameController = require('./controllers/games');
+const profileController = require('./controllers/profile');
 const ejsLayouts = require('express-ejs-layouts');
 const Movies = require('./db/models/movieM');
 
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/movies", movieController);
 app.use('/tv-shows', tvshowController);
 app.use('/games', gameController);
+app.use('/profile', profileController);
 
 
 
