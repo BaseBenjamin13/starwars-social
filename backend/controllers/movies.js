@@ -13,6 +13,14 @@ router.get('/', (req, res) => {
         .catch(console.error)
 })
 
+router.get('/most-liked-movie', (req, res) => {
+    Movies.aggregate([{ $sort: { likes: -1}}])
+        .then((movies) => {
+            res.render('./movies/most-liked-movie', { movies: movies })
+        })
+        .catch(console.error);
+})
+
 router.get('/:grab/movie', (req, res) => {
     const id = req.params.grab;
     Movies.findById(id)

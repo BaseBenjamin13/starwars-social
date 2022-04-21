@@ -74,6 +74,9 @@ April 21
     add likes system to tv-shows and game. ✅ commited
     fix all refresh errors, comment/delete with redirect ✅ commited
     make route for profile page and controller. ✅
-    make profile.ejs ✅
-    research filter options, rendering in certaint order on screen.
+    make profile.ejs ✅ commited
+    research filter options, rendering in certaint order on screen. ✅
+    add filter by most likes. ✅ commited
+
+April 22
     setup profile container with placeholder img, name, info. 
