@@ -3,7 +3,7 @@
 
 <h1>Welcome</h1>
 
-<div class="container">
+<div class="singleContainer">
 
         <div class="item container-sm" >
             <h1><%=movie.title %></h1>
@@ -11,24 +11,30 @@
             <img src="<%=movie.img %>" alt="" class=" img-fluid img-thumbnail ">
             
         </div>
-        <div>
-            <a href="<%=movie.links.buy %>">BUY HERE</a>
+        <div class="infoDiv">
+            <h1>Episode <%=movie.episode %></h1>
+            <a href="<%=movie.links.buy %>" target="_blank"><button class="btn-primary">BUY HERE</button></a>
             <br>
-            <a href="<%=movie.links.trailer %>">View Trailer</a>
+            <p>this is some info about the movie</p>
+            <br>
+            <a href="<%=movie.links.trailer %>" target="_blank"><button class="btn-primary">TRAILER</button></a>
+            <br>
+            
+            <h2><a href="/movies/<%=movie._id %>/movie/liked"><button>Like</button></a> : <%=movie.likes %></h2>
         </div>
         <br>
 
 </div>
 <br>
-<div >
+<div class="commentContainer">
     <!-- <div>
         <label for="comments">Comment on this movie</label>
         <textarea name="comments" id="comments" rows="3" cols="40">Enter comment here</textarea>
     </div> -->
     <form action="/movies/<%=movie._id %>/movie/?_method=put" method="POST">
-        <div class="mb-3 item">
-            <label for="comments" class="form-label">Comment on this Movie</label>
-            <textarea class="form-control" name="comments" id="comments" rows="3">Enter comment here</textarea>
+        <div class="comment-section item">
+            <label for="comments" class="form-label comment-section">Comment on this Movie</label>
+            <textarea class="" name="comments" id="comments" rows="3">Enter comment here</textarea>
         </div>
         <input type="submit" class="btn btn-primary" />
         <!-- <a href="#homepage" class="btn btn-secondary">Cancel</a> -->
@@ -36,8 +42,8 @@
 
     <div>
         <% for(let i=0; i < movie.comments.length; i++){ %>
-            <div>
-                <h3><%=movie.comments[i] %></h3>
+            <div class="comment-section item">
+                <h3 ><%=movie.comments[i] %></h3>
                 <form action="/movies/<%=movie._id %>/movie/<%=movie.comments[i] %>/?_method=put" method="POST" class="d-inline">
                     <input type="submit" value="Delete" name="delete" class="btn btn-danger" />
                 </form>
@@ -46,7 +52,11 @@
     </div>
 </div>
 
-
+<script>
+    function liked() {
+        movie.likes = movie.likes + 1;
+    }
+</script>
 
 
 

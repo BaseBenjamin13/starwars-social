@@ -1,0 +1,17 @@
+
+
+
+
+April 20th 2022
+standup #3 ✅
+    yesterday:
+    i made a delete route.
+    i made create function for games and tv-shows.
+    spent most time on trying to fix wierd bugs like adds comment on refresh and deletes all dulplicates.
+
+    Today: 
+    add delete route to tv-shows and games.
+    make all links open in a new tab.
+    style links to the right side where info will go.
+
+    go back to proposal

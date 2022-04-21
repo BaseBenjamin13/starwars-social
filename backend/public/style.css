@@ -9,6 +9,34 @@ body {
     grid-gap: 16px;
     justify-content: space-around;
 }
+.singleContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(40vw, max-content));
+    grid-gap: 20px;
+    justify-content: space-around;
+}
+
+.commentContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(60vw, max-content);
+    grid-gap: 20px;
+    /* justify-content: space-around; */
+}
+
+
+.infoDiv {
+    background-color: rgb(46, 46, 46);
+    text-align: center;
+    border: 5px gold solid;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 25vw;
+}
 
 .item {
     border: 5px gold solid;
@@ -20,6 +48,10 @@ body {
     width: 25vw;
 }
 
+.comment-section {
+    width: 60vw;
+    text-align: center;
+}
 
 #brandName {
     padding: 5px;

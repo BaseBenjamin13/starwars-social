@@ -64,4 +64,6 @@ April 19
 
 April 20
     add delete route on tv-show and game. ✅
-    syle links to right side.
+    make all links open in new tab, target="_blank" ✅
+    syle links to right side. ✅
+    add like button functionality ✅
