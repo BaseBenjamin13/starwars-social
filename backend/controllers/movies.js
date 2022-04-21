@@ -32,7 +32,8 @@ router.put('/:grab/movie', (req, res) => {
             Movies.findById(id)
                 .then((movie) => {
                     // res.json(movie)
-                    res.render('./movies/movie', { movie: movie })
+                    res.redirect(`/movies/${id}/movie`)
+                    // res.render('./movies/movie', { movie: movie })
                     // res.redirect('./movies/id/movie')
                 })
         })
@@ -50,7 +51,8 @@ router.put('/:grab/movie/:com', (req, res) => {
             Movies.findById(id)
                 .then((movie) => {
                     // res.json(movie)
-                    res.render('./movies/movie', { movie: movie })
+                    res.redirect(`/movies/${id}/movie`)
+                    // res.render('./movies/movie', { movie: movie })
                     // res.redirect('./movies/movie')
                 })
         })
