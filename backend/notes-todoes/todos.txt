@@ -81,9 +81,9 @@ April 21
 
 April 22
 
-    make user model username required  
-    make register form which is just creating a user like we did with todos,
-    setup profile container with placeholder img, name, info. 
-    login form grab username from ejs with req.body.namesomething
-    use that name to query the right user {username: req.body.name}
-    render data to the profile page.
+    make user model username required  ✅
+    make register form which is just creating a user like we did with todos, ✅ commited
+    login form grab username from ejs with req.body.namesomething ✅
+    use that name to query the right user {username: req.body.name} ✅
+    render data to the profile page. ✅ commited
+     setup profile container with placeholder img, name, info. 
