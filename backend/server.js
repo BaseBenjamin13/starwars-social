@@ -3,6 +3,8 @@ const express = require('express');
 // const cors = require('cors')
 const path = require('path');
 // const mongoose = require('./db/connection');
+// const bodyParser = require('body-parser');
+
 const methodOverride = require('method-override');
 require('ejs');
 const movieController = require('./controllers/movies');

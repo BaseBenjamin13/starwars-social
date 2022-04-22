@@ -57,3 +57,12 @@ body {
     padding: 5px;
     font-family: 'Bebas Neue', cursive;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}
