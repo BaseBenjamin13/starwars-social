@@ -1,13 +1,20 @@
 
 lookup:
     favicon
-    
+
 extra strech goals:
     cryptic password.
 
 Remake Better: 
     DELETE: delete comment by using index number.
         tried and failed, come back to it.
+
+ERROR: 
+    login error page has style but register error does not.
+        i believe its because the app crashes on register error but not on login error.
+Office hours: 
+    how can i stop error before app crashes so i can run error page and send back to register.
+
 
 April 12✅
     setup file structure for everything   ✅
@@ -92,7 +99,9 @@ April 22
     add all user model keys into register form. ✅
      setup profile container with placeholder img, name, info. ✅
     add password ✅
-    on register error run failed to register page and login.
+    on register error run failed to register page and login. ✅
 
 April 23
     style error pages add "go back" or "try again" buttons.
+    take login and register buttons out of dropdown.
+    setup favicon. ✅
