@@ -37,11 +37,12 @@ router.get('/register', (req, res) => {
 router.post('/', (req, res) => {
     User.create(req.body)
         .then((user) => {
-            // if (user) {
+            if (_message == 'User validation failed') {
+                res.render('./error-pages/wronglog')
+            } else {
+                
                 res.render('./profile/profile', {user : user});
-            // } else {
-                // res.render('./error-pages/wronglog');
-            // }
+            }
         })
         .catch(console.error);
 })

@@ -17,9 +17,10 @@ update a review/comment.
 delete a review/comment. ✅
 ^^^^^^^^^^^^^^^^^^^
 have profile where you can add favorites.
+
 Stretch Goals
-register profile.
-login to profile.
+register profile. ✅
+login to profile. ✅
 have To Watch/play CRUD list on profile.
 have already Watched CRUD list on profile.
 view other profiles
