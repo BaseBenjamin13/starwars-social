@@ -103,5 +103,8 @@ April 22
 
 April 23
     style error pages add "go back" or "try again" buttons.
-    take login and register buttons out of dropdown.
+    take login and register buttons out of dropdown. ✅
     setup favicon. ✅
+
+April 24
+    Deploy on heroku.

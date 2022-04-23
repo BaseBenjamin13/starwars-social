@@ -21,7 +21,7 @@ Standup #4  April 23 2022
         made user schema and model 
         added register form to register users
         made login form 
-        if current login itll send user to profile page rendering the personalized data.
+        if correct login itll send user to profile page rendering the personalized data.
         added password for extra sercurity.
         made error page, for when user fails to enter right login info.
         same for register.
@@ -30,3 +30,5 @@ Standup #4  April 23 2022
         style error pages add "go back" or "try again" buttons.
         take login and register buttons out of dropdown.
         setup favicon.
+        add favorite movies array into profile model.
+        

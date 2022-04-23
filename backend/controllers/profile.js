@@ -37,10 +37,18 @@ router.get('/register', (req, res) => {
 router.post('/', (req, res) => {
     User.create(req.body)
         .then((user) => {
+        //     if (!req.body.userName || !req.body.password) {
+        //         res.render('./profile/profile', {user : user});
+        //     } else {
+        //         res.render('./error-pages/wronglog')
+        //     }
             res.render('./profile/profile', {user : user});
+            
+            console.log({user})
         })
         // res.render('./error-pages/wronglog')
         .catch(console.error);
+      
 })
 
 

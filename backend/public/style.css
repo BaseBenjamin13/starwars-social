@@ -106,3 +106,16 @@ a:hover {
     width: 150px;
     height: 150px;
 }
+
+.btn-login, .btn-register{
+    box-shadow:  1px 1px 1px 1px gold;
+    background-color: black;
+    color: gold;
+    width: 100px;
+    height: 45px;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.btn-login {
+    margin-left: 50vw;
+}
