@@ -2,6 +2,7 @@
 const mongoose = require('../connection');
 
 
+//Davidson Fong showed me the unique key
 const UserSchema = new mongoose.Schema({
     userName: {type: String, required: true, unique: true},
     firstName: String, 

@@ -1,14 +1,48 @@
 
-<form action="/profile" method="post">
-    <!-- from bootsrtap -->
-    <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">@</span>
-        <input type="text" class="form-control" name="userName" placeholder="userName" aria-label="Username" aria-describedby="addon-wrapping">
-    </div>
-    <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">First Name</span>
-        <input type="text" class="form-control" name="firstName" placeholder="first name" aria-describedby="addon-wrapping">
-    </div>
-    <br>
-    <input type="submit" class="btn btn-primary" />
-</form>
+
+<div class="registerForm">
+    <h2 class="SWfont">Register</h2>
+    <form action="/profile" method="post">
+        <!-- from bootsrtap -->
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="userName" placeholder="userName here" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <p class="required">Required ^</p>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">First Name</span>
+            <input type="text" class="form-control" name="firstName" placeholder="first name here" aria-describedby="addon-wrapping">
+        </div>
+        <p class="optional">Optional ^</p> 
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Last Name</span>
+            <input type="text" class="form-control" name="lastName" placeholder="last name here" aria-describedby="addon-wrapping">
+        </div>
+        <p class="optional">Optional ^</p>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Age</span>
+            <input type="text" class="form-control" name="age" placeholder="your age here" aria-describedby="addon-wrapping">
+        </div>
+        <p class="optional">Optional ^</p>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Gender</span>
+            <input type="text" class="form-control" name="gender" placeholder="your gender here" aria-describedby="addon-wrapping">
+        </div>
+        <p class="optional">Optional ^</p>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Profile Image</span>
+            <input type="text" class="form-control" name="profileImg" placeholder="Image url here" aria-describedby="addon-wrapping">
+        </div>
+        <p class="optional">Optional ^</p>
+
+        <br>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+</div>
+
+

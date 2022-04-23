@@ -86,4 +86,6 @@ April 22
     login form grab username from ejs with req.body.namesomething ✅
     use that name to query the right user {username: req.body.name} ✅
     render data to the profile page. ✅ commited
-     setup profile container with placeholder img, name, info. 
+    add all user model keys into register form. ✅
+     setup profile container with placeholder img, name, info. ✅
+    add password

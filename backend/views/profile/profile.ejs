@@ -1,4 +1,15 @@
 
-<div>
-    <h1>hello "<%=user.userName %> " heres your profile.</h1>
+<div class="userInfo">
+    <div>
+        <img src="<%=user.profileImg %>" alt="" class="userImg img-fluid">
+    </div>
+    <div>
+        <h1 class="SWfont"><%=user.userName %></h1>
+        <br>
+        <h2><%=user.firstName %></h2>
+        <h2><%=user.lastName %>:</h2>
+        
+    </div>
+   
+    <p> <%=user.gender %></p>
 </div>
