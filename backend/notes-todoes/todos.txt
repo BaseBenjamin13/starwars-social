@@ -88,4 +88,5 @@ April 22
     render data to the profile page. ✅ commited
     add all user model keys into register form. ✅
      setup profile container with placeholder img, name, info. ✅
-    add password
+    add password ✅
+    on register error run failed to register page.

@@ -16,9 +16,15 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-    User.findOne({userName: req.body.userName})
+    User.findOne({userName: req.body.userName, password: req.body.password})
         .then((user) => {
-            res.render('./profile/profile', {user : user});
+            //Checking if the users login is correct.
+            if (user) {
+                res.render('./profile/profile', {user : user});
+            } else {
+                res.render('./error-pages/wronglog')
+            }
+            
         })
         .catch(console.error);
 })
@@ -31,7 +37,11 @@ router.get('/register', (req, res) => {
 router.post('/', (req, res) => {
     User.create(req.body)
         .then((user) => {
-            res.render('./profile/profile', {user : user});
+            // if (user) {
+                res.render('./profile/profile', {user : user});
+            // } else {
+                // res.render('./error-pages/wronglog');
+            // }
         })
         .catch(console.error);
 })
