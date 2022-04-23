@@ -5,6 +5,16 @@ const router = express.Router();
 
 
 
+function popUp (msg){
+    popupWrapper.style.display = 'block';
+    popupMessage.innerHTML = msg;
+    closePopup.addEventListener('click', () => {
+        popupWrapper.style.display = 'none';
+    })
+};
+
+
+
 // router.get('/', (req, res) => {
 //     // User.findOne({username: req.body})
 //     res.render('./profile/profile');
@@ -35,19 +45,22 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    User.create(req.body)
-        .then((user) => {
-        //     if (!req.body.userName || !req.body.password) {
-        //         res.render('./profile/profile', {user : user});
-        //     } else {
-        //         res.render('./error-pages/wronglog')
-        //     }
+    if (!req.body.userName || !req.body.password) {
+        res.render('./error-pages/wronglog')
+        // res.send('<h1>failed to register</h1>')
+    } else {
+        User.create(req.body)
+        .then((user) => {     
             res.render('./profile/profile', {user : user});
-            
-            console.log({user})
-        })
-        // res.render('./error-pages/wronglog')
-        .catch(console.error);
+        
+        //res.render('./error-pages/wronglog')
+        // res.render('./profile/profile', {user : user});
+        
+        console.log({user})
+    })
+    // res.render('./error-pages/wronglog')
+    .catch(console.error);
+    }
       
 })
 
