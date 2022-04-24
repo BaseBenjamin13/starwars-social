@@ -46,7 +46,7 @@ router.get('/register', (req, res) => {
 
 router.post('/', (req, res) => {
     if (!req.body.userName || !req.body.password) {
-        res.render('./error-pages/wronglog')
+        res.render('./error-pages/register-failed')
         // res.send('<h1>failed to register</h1>')
     } else {
         User.create(req.body)

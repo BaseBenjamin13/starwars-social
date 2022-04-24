@@ -103,7 +103,7 @@ April 22
 
 April 23
     fix register error page. ✅
-    style error pages add "go back" or "try again" buttons. 
+    style error pages add "go back" or "try again" buttons. ✅
     take login and register buttons out of dropdown. ✅
     setup favicon. ✅
 
