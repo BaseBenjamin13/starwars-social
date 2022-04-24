@@ -2,6 +2,8 @@
 const express = require('express');
 const User = require('../db/models/profileM');
 const Movies = require('../db/models/movieM');
+//tvshows
+//games
 const router = express.Router();
 
 
@@ -81,6 +83,17 @@ router.put('/login', (req, res) => {
         })
         .catch(console.error);
 })
+
+router.put('/login/:movieId', (req, res) => {
+    const movieId = req.params.movieId;
+    Movies.findById(movieId)
+        .then( (movie) => {
+            User.findOneAndUpdate({ username: req.body.userName}, {$pull: { favMovieList: movie }})
+                .then( (user) => {
+                    res.redirect('/profile/login')
+                })
+        })
+})    
 
 
 

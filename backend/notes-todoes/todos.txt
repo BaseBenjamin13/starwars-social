@@ -110,7 +110,11 @@ April 23
 April 24
 
     add favorite movies into selected user ✅
-    
+    delete fav movie ✅
+    fix refresh error.
+    fix needing to login after each favorite movie added. 
+
+
 
 
     Deploy on heroku.
