@@ -4,7 +4,7 @@
         <img src="<%=user.profileImg %>" alt="" class="userImg img-fluid">
     </div>
     <div>
-        <h1 class="SWfont"><%=user.userName %></h1>
+        <h1 class="SWfont" nam><%=user.userName %></h1>
         <br>
         <h2><%=user.firstName %></h2>
         <h2><%=user.lastName %>:</h2>
@@ -13,3 +13,31 @@
    
     <p> <%=user.gender %></p>
 </div>
+
+<div class="container">
+    <form action="/profile/login/?_method=put" method="POST">
+        <div class="input-group flex-nowrap">
+            <!-- could put username input -->
+            <span class="input-group-text" id="addon-wrapping">Movie</span>
+            <input type="text" class="form-control" name="favMovieList" placeholder="Movie ID" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <div class="input-group flex-nowrap">
+            <!-- could put username input -->
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="userName" placeholder="Your username" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+    
+    <% for(let i=0; i < user.favMovieList.length; i++){ %>
+        <div class="item container-sm" >
+            <a href='/movies/<%=user.favMovieList[i]._id %>/movie'>
+                <h1><%=user.favMovieList[i].title %></h1>
+            </a>
+            <img src="<%=user.favMovieList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+            
+        </div>
+    <% } %>     
+
+</div>
+

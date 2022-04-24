@@ -108,4 +108,9 @@ April 23
     setup favicon. ✅
 
 April 24
+
+    add favorite movies into selected user ✅
+    
+
+
     Deploy on heroku.

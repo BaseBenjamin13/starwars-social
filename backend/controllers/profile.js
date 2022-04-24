@@ -1,17 +1,18 @@
 
 const express = require('express');
 const User = require('../db/models/profileM');
+const Movies = require('../db/models/movieM');
 const router = express.Router();
 
 
 
-function popUp (msg){
-    popupWrapper.style.display = 'block';
-    popupMessage.innerHTML = msg;
-    closePopup.addEventListener('click', () => {
-        popupWrapper.style.display = 'none';
-    })
-};
+// function popUp (msg){
+//     popupWrapper.style.display = 'block';
+//     popupMessage.innerHTML = msg;
+//     closePopup.addEventListener('click', () => {
+//         popupWrapper.style.display = 'none';
+//     })
+// };
 
 
 
@@ -64,6 +65,22 @@ router.post('/', (req, res) => {
       
 })
 
+router.put('/login', (req, res) => {
+    const id = req.body.favMovieList;
+    Movies.findById(id)
+        .then( (movie) => {
+            User.findOneAndUpdate({ userName: req.body.userName}, {$push: {favMovieList: movie}})
+                .then( (user) => {
+                    res.redirect('/profile/login')
+                })
+                .catch(console.error);
+            // Movies.findById(id)
+            //     .then((movie) => {
+            //         // res.redirect(`/movies/${id}/movie`)
+            //     })
+        })
+        .catch(console.error);
+})
 
 
 
