@@ -17,12 +17,17 @@ body {
     justify-content: space-around;
 }
 
-.commentContainer, .registerForm, .error-container {
+.commentContainer, .registerForm, .error-container, .fav-movie-form {
     display: grid;
     justify-content: center;
     grid-template-columns: minmax(60vw, max-content);
     grid-gap: 20px;
     /* justify-content: space-around; */
+}
+.fav-movie-form {
+    /* grid-template-columns: minmax(25vw, max-content); */
+    grid-template-columns: repeat(auto-fit, minmax(20vw, max-content));
+    margin: 20px;
 }
 
 .registerForm {
@@ -61,11 +66,7 @@ body {
     text-align: center;
     margin-top: 10vh;
 }
-.back-btn {
-    font-size: 30px;
-    width: 10vw;
-    height: 10vh;
-}
+
 
 a {
     color: white;
@@ -98,6 +99,7 @@ a:hover {
 
 /* profile  */
 .userInfo {
+    background: linear-gradient(to right, #00AAFF, #000000, #dc3545);
     background-color: rgb(65, 65, 65);
     color: white;
     display: flex;
@@ -117,14 +119,28 @@ a:hover {
     height: 150px;
 }
 
+
+
+
+/* Buttons.  */
+.back-btn {
+    font-size: 30px;
+    width: 10vw;
+    height: 10vh;
+}
+
 .btn-login, .btn-register{
-    box-shadow:  1px 1px 1px 1px gold;
+    box-shadow:  1px 1px 1px 1px inset gold;
     background-color: black;
     color: gold;
     width: 100px;
     height: 45px;
     font-size: 25px;
     margin-left: 10px;
+}
+.btn-login:hover, .btn-register:hover {
+    box-shadow:  1px 1px 1px 1px gold;
+    /* color: blue; */
 }
 .btn-login {
     margin-left: 50vw;

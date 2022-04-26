@@ -4,6 +4,9 @@ Big cool parts for presontation.
 
 lookup:
     favicon ✅
+    sessionStorage: 
+        opens the door to so much, need to spend more time learning this 
+        you could have your name next to comments 
 
 extra strech goals:
     cryptic password.
@@ -117,12 +120,22 @@ April 24
 
     add favorite movies into selected user ✅
     delete fav movie ✅
-    learned a lot about season storage ✅
+    learned a lot about session storage ✅
 
 
 April 25
     fix delete route. ✅
+    
 
+
+April 26
+    style profile page ✅
+    add favorite tv-shows to selected user
+    add favorite games to selected user
+
+April 27
+    have a too watch movie list
+    make add too watch list button on movie
 
 
 
