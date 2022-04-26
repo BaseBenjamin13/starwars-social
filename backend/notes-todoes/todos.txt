@@ -1,4 +1,7 @@
 
+Big cool parts for presontation.
+    error page on register stops the server from crashing if the required fields fail.
+
 lookup:
     favicon ✅
 
@@ -14,6 +17,9 @@ ERROR:
         i believe its because the app crashes on register error but not on login error.✅
 Office hours: 
     how can i stop error before app crashes so i can run error page and send back to register.✅
+    How can i use dom manipulation in ejs and backend
+        how can i grab user data from routes/document and use it in JS.
+            do i need to refactor to html.
 
 
 April 12✅
@@ -111,10 +117,35 @@ April 24
 
     add favorite movies into selected user ✅
     delete fav movie ✅
+    learned a lot about season storage ✅
+
+
+April 25
+    fix delete route. ✅
+
+
+
+
+
+
     fix refresh error.
     fix needing to login after each favorite movie added. 
-
+    local season storage on browser, json web token express-season 
+    express-flash to be able to flash loggin error message
+    logout button
 
 
 
     Deploy on heroku.
+
+
+
+  "dotenv": "^16.0.0",
+
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+
+
+
+        "passport": "^0.5.2",
+    "passport-local": "^1.0.0"

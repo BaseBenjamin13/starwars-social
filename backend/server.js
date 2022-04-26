@@ -1,4 +1,5 @@
 
+
 const express = require('express');
 // const cors = require('cors')
 const path = require('path');
@@ -16,6 +17,8 @@ const Movies = require('./db/models/movieM');
 
 const app = express();
 
+
+
 // app.use(express.static('public'));
 
 
@@ -29,6 +32,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static('public')); // to use css imgs in public folder
+
+
+
 
 
 app.use("/movies", movieController);

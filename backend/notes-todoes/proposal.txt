@@ -16,7 +16,7 @@ comments will show on page. ✅
 update a review/comment.
 delete a review/comment. ✅
 ^^^^^^^^^^^^^^^^^^^
-have profile where you can add favorites.
+have profile where you can add favorites. ✅
 
 Stretch Goals
 register profile. ✅
