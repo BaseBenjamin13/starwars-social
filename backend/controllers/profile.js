@@ -2,7 +2,7 @@
 const express = require('express');
 const User = require('../db/models/profileM');
 const Movies = require('../db/models/movieM');
-//tvshows
+const TvShows = require('../db/models/tv-showM');
 //games
 const router = express.Router();
 
@@ -76,7 +76,7 @@ router.put('/login', (req, res) => {
 })
 
 //remove fav movie 
-router.put('/login/:movieId', (req, res) => {
+router.put('/login/:movieId/moviedel', (req, res) => {
     const id = req.params.movieId;
     Movies.findById(id)
         .then( (movie) => {
@@ -89,6 +89,41 @@ router.put('/login/:movieId', (req, res) => {
         })
         .catch(console.error);
 })
+
+//add tvshow too fav list
+router.put('/login/tvshow', (req, res) => {
+    const id = req.body.favTvshowList;
+    TvShows.findById(id)
+        .then( (tvshow) => {
+            User.findOneAndUpdate({ userName: req.body.userName}, {$push: {favTvshowList: tvshow}})
+                .then( (user) => {
+                    // res.render('./profile/profile', { user : user })
+                    res.redirect('/profile/login')
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
+//remove fav tvshow
+router.put('/login/:tvshowId/tvshowdel', (req, res) => {
+    const id = req.params.tvshowId;
+    TvShows.findById(id)
+        .then( (tvshow) => {
+            User.findOneAndUpdate({ userName: req.body.userName}, {$pull: {favTvshowList: tvshow}})
+                .then( (user) => {
+                    // res.render('./profile/profile', { user : user })
+                    res.redirect('/profile/login')
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
+
+
+
+
 // router.put('/:movieId/login/:userId', (req, res) => {
 //     const userId = req.params.userId;
 //     const movieId = req.params.movieId;

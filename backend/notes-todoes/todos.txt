@@ -7,6 +7,7 @@ lookup:
     sessionStorage: 
         opens the door to so much, need to spend more time learning this 
         you could have your name next to comments 
+    starwars color theme on adobe
 
 extra strech goals:
     cryptic password.
@@ -125,12 +126,12 @@ April 24
 
 April 25
     fix delete route. ✅
-    
+
 
 
 April 26
     style profile page ✅
-    add favorite tv-shows to selected user
+    add favorite tv-shows to selected user ✅
     add favorite games to selected user
 
 April 27

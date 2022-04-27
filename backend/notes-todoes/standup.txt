@@ -32,3 +32,7 @@ Standup #4  April 23 2022
         setup favicon.
         add favorite movies array into profile model.
         
+
+Standup #5 April 26
+    Sunday: 
+    
