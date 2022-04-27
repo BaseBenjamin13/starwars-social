@@ -138,8 +138,13 @@ April 27
     have a too watch movie list ✅
     make add too watch list button on movie ✅
     display to watch list ✅
-    remove movie from watch list.
+    remove movie from watch list. ✅
+    add tvshow and game to watch list.
+    have watched movie list
+    have delete
+    make turnswitch for needing username to delete and look at watch list.
 
+    Deploy on heroku.
 
 
 
@@ -153,7 +158,6 @@ April 27
 
 
 
-    Deploy on heroku.
 
 
 

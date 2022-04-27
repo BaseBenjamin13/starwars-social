@@ -173,6 +173,22 @@ router.get('/login/watchlist', (req, res) => {
         .then( (user) => {
             res.render('./profile/watch-list', { user : user})
         })
+        .catch(console.error);
+})
+//remove movie from watch list 
+router.put('/login/:grab/watchlist/moviedel', (req, res) => {
+    const id = req.params.grab;
+    const userName = req.body.userName;
+    //{ userName: watchUser.userName} find by saved userName
+    Movies.findById(id)
+        .then( (movie) => {
+            User.findOneAndUpdate({ userName: userName}, {$pull: {watchList: movie}})
+                .then( (user) => {
+                    res.redirect('/profile/login');
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
 })
 
 

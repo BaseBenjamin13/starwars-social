@@ -35,4 +35,24 @@ Standup #4  April 23 2022
 
 Standup #5 April 26
     Sunday: 
-    
+    add favorite movies into selected user ✅
+    delete fav movie ✅
+    learned a lot about session storage ✅
+
+
+    Yesterday: 
+        fix delete route. ✅
+
+    Today:
+        style profile page ✅
+        add favorite tv-shows to selected user ✅
+        add favorite games to selected user ✅
+
+Standup #6 April 27
+    Yesterday: 
+        style profile page ✅
+        add favorite tv-shows to selected user ✅
+        add favorite games to selected user ✅
+
+    Today: 
+        
