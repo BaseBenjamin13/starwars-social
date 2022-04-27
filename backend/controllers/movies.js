@@ -1,6 +1,7 @@
 
 const express = require('express');
 const Movies = require('../db/models/movieM');
+const User = require('../db/models/profileM');
 const router = express.Router();
 
 
@@ -60,6 +61,26 @@ router.put('/:grab/movie', (req, res) => {
         })
         .catch(console.error);
 })
+
+//add movie too watch list
+router.put('/:grab/movie/watchlist', (req, res) => {
+    const id = req.params.grab;
+    console.log(id);
+    const userName = req.body.userName;
+    Movies.findById(id)
+        .then( (movie) => {
+            console.log(movie);
+            User.findOneAndUpdate({ userName: userName}, {$push: {watchList: movie}})
+                .then( (user) => {
+                    // console.log(user);
+                    // res.render('./profile/profile', { user : user })
+                    res.redirect('/profile/login')
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
 
 //DELETE
 router.put('/:grab/movie/:com', (req, res) => {

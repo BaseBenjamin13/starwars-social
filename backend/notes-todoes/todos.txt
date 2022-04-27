@@ -132,11 +132,14 @@ April 25
 April 26
     style profile page ✅
     add favorite tv-shows to selected user ✅
-    add favorite games to selected user
+    add favorite games to selected user ✅
 
 April 27
-    have a too watch movie list
-    make add too watch list button on movie
+    have a too watch movie list ✅
+    make add too watch list button on movie ✅
+    display to watch list 
+    remove movie from watch list.
+    
 
 
 
