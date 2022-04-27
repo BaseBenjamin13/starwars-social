@@ -3,22 +3,16 @@ const express = require('express');
 const User = require('../db/models/profileM');
 const Movies = require('../db/models/movieM');
 const TvShows = require('../db/models/tv-showM');
-//games
+const Games = require('../db/models/gameM');
 const router = express.Router();
 
 
 
-// router.get('/', (req, res) => {
-//     // User.findOne({username: req.body})
-//     res.render('./profile/profile');
-// })
 
 //login
 router.get('/login', (req, res) => {
     res.render('./profile/login');
 })
-
-
 
 router.post('/login', (req, res) => {
         User.findOne({userName: req.body.userName, password: req.body.password})
@@ -35,6 +29,10 @@ router.post('/login', (req, res) => {
   
 })
 
+
+
+
+
 //Register
 router.get('/register', (req, res) => {
     res.render('./profile/register');
@@ -47,11 +45,8 @@ router.post('/', (req, res) => {
     } else {
         User.create(req.body)
         .then((user) => {     
-            res.render('./profile/profile', {user : user});
-        
-        //res.render('./error-pages/wronglog')
-        // res.render('./profile/profile', {user : user});
-        
+            // res.render('./profile/profile', {user : user});
+            res.redirect('/profile/login');
         console.log({user})
     })
     // res.render('./error-pages/wronglog')
@@ -59,6 +54,10 @@ router.post('/', (req, res) => {
     }
       
 })
+
+
+
+
 
 //add movie too fav list
 router.put('/login', (req, res) => {
@@ -90,6 +89,13 @@ router.put('/login/:movieId/moviedel', (req, res) => {
         .catch(console.error);
 })
 
+
+
+
+
+
+
+
 //add tvshow too fav list
 router.put('/login/tvshow', (req, res) => {
     const id = req.body.favTvshowList;
@@ -111,6 +117,42 @@ router.put('/login/:tvshowId/tvshowdel', (req, res) => {
     TvShows.findById(id)
         .then( (tvshow) => {
             User.findOneAndUpdate({ userName: req.body.userName}, {$pull: {favTvshowList: tvshow}})
+                .then( (user) => {
+                    // res.render('./profile/profile', { user : user })
+                    res.redirect('/profile/login')
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
+
+
+
+
+
+
+//add game too fav list
+router.put('/login/game', (req, res) => {
+    const id = req.body.favGameList;
+    Games.findById(id)
+        .then( (game) => {
+            User.findOneAndUpdate({ userName: req.body.userName}, {$push: {favGameList: game }})
+                .then( (user) => {
+                    // res.render('./profile/profile', { user : user })
+                    res.redirect('/profile/login')
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
+//remove fav game
+router.put('/login/:gameId/gamedel', (req, res) => {
+    const id = req.params.gameId;
+    Games.findById(id)
+        .then( (game) => {
+            User.findOneAndUpdate({ userName: req.body.userName}, {$pull: {favGameList: game }})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
