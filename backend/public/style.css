@@ -129,7 +129,7 @@ a:hover {
     height: 10vh;
 }
 
-.btn-login, .btn-register{
+.btn-login, .btn-register {
     box-shadow:  1px 1px 1px 1px inset gold;
     background-color: black;
     color: gold;
@@ -144,4 +144,18 @@ a:hover {
 }
 .btn-login {
     margin-left: 50vw;
+}
+
+.watch-btn-div {
+    margin-left: 40rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+.watch-btn {
+    background-color: #00AAFF;
+    box-shadow:  1px 1px 1px 1px black;
+    margin-top: 1rem;
+}
+.watch-btn:hover {
+    box-shadow:  1px 1px 1px 1px inset black;
 }

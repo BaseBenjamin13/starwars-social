@@ -7,7 +7,7 @@ const Games = require('../db/models/gameM');
 const router = express.Router();
 
 
-
+let watchUser;
 
 //login
 router.get('/login', (req, res) => {
@@ -20,6 +20,7 @@ router.post('/login', (req, res) => {
             //Checking if the users login is correct.
             if (user) {
                 res.render('./profile/profile', {user : user});
+                watchUser = user;
             } else {
                 res.render('./error-pages/wronglog')
             }
@@ -68,6 +69,7 @@ router.put('/login', (req, res) => {
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
+                   
                 })
                 .catch(console.error);
         })
@@ -163,6 +165,15 @@ router.put('/login/:gameId/gamedel', (req, res) => {
 })
 
 
+
+
+//get watch list 
+router.get('/login/watchlist', (req, res) => {
+    User.findOne({ userName: watchUser.userName})
+        .then( (user) => {
+            res.render('./profile/watch-list', { user : user})
+        })
+})
 
 
 

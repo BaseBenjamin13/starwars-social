@@ -1,0 +1,15 @@
+
+<h2 class="SWfont"><%=user.userName %> Watch List</h2>
+<div class="container">
+
+    <% for(let i=0; i <user.watchList.length; i++){ %>
+        <div class="item container-sm" >
+            <a href='/movies/<%=user.watchList[i]._id %>/movie'>
+                <h1><%=user.watchList[i].title %></h1>
+            </a>
+            <img src="<%=user.watchList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+            
+        </div>
+    <% } %>     
+
+</div>
