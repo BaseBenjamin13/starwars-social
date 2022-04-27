@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema({
     favTvshowList: Array,
     favGameList: Array,
     reviewCount: Number,
-    watchList: Array
+    watchList: {movies: Array, tvshows: Array, games: Array}
 })
 
 const User = new mongoose.model('User', UserSchema);

@@ -19,6 +19,15 @@
             <a href="<%=tvShow.links.trailer %>" target="_blank"><button class="btn-primary">TRAILER</button></a>
             <br>
             <h2><a href="/tv-shows/<%=tvShow._id %>/tvshow/liked"><button class="btn-success">Like</button></a> : <%=tvShow.likes %></h2>
+            
+            <form action="/tv-shows/<%=tvShow._id %>/tvshow/watchlist/?_method=put" method="POST">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">@</span>
+                    <input type="text" class="form-control" name="userName" placeholder="Your username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <input type="submit" class="btn-primary" value="Add to watchlist" />
+            </form>
+
         </div>
 
         <br>

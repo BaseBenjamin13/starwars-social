@@ -139,9 +139,9 @@ April 27
     make add too watch list button on movie ✅
     display to watch list ✅
     remove movie from watch list. ✅
-    add tvshow and game to watch list.
+    add tvshow and game to watch list. ✅
+    have delete ✅
     have watched movie list
-    have delete
     make turnswitch for needing username to delete and look at watch list.
 
     Deploy on heroku.

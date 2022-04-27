@@ -70,11 +70,11 @@ router.put('/:grab/movie/watchlist', (req, res) => {
     Movies.findById(id)
         .then( (movie) => {
             console.log(movie);
-            User.findOneAndUpdate({ userName: userName}, {$push: {watchList: movie}})
+            User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.movies": movie}})
                 .then( (user) => {
                     // console.log(user);
                     // res.render('./profile/profile', { user : user })
-                    res.redirect('/profile/login')
+                    res.redirect('/profile/login');
                 })
                 .catch(console.error);
         })

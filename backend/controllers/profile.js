@@ -167,6 +167,9 @@ router.put('/login/:gameId/gamedel', (req, res) => {
 
 
 
+
+
+
 //get watch list 
 router.get('/login/watchlist', (req, res) => {
     User.findOne({ userName: watchUser.userName})
@@ -182,7 +185,37 @@ router.put('/login/:grab/watchlist/moviedel', (req, res) => {
     //{ userName: watchUser.userName} find by saved userName
     Movies.findById(id)
         .then( (movie) => {
-            User.findOneAndUpdate({ userName: userName}, {$pull: {watchList: movie}})
+            User.findOneAndUpdate({ userName: userName }, {$pull: {"watchList.movies": movie}})
+                .then( (user) => {
+                    res.redirect('/profile/login');
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+//remove tvshow from watch list 
+router.put('/login/:grab/watchlist/tvshowdel', (req, res) => {
+    const id = req.params.grab;
+    const userName = req.body.userName;
+    //{ userName: watchUser.userName} find by saved userName
+    TvShows.findById(id)
+        .then( (tvshow) => {
+            User.findOneAndUpdate({ userName: userName }, {$pull: {"watchList.tvshows": tvshow}})
+                .then( (user) => {
+                    res.redirect('/profile/login');
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+//remove game from watch list 
+router.put('/login/:grab/watchlist/gamedel', (req, res) => {
+    const id = req.params.grab;
+    const userName = req.body.userName;
+    //{ userName: watchUser.userName} find by saved userName
+    Games.findById(id)
+        .then( (game) => {
+            User.findOneAndUpdate({ userName: userName }, {$pull: {"watchList.games": game}})
                 .then( (user) => {
                     res.redirect('/profile/login');
                 })

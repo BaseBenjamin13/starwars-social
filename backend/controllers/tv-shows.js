@@ -1,6 +1,7 @@
 
 const express = require('express');
 const TvShows = require('../db/models/tv-showM');
+const User = require('../db/models/profileM');
 const router = express.Router();
 
 
@@ -55,6 +56,26 @@ router.put('/:grab/tvshow', (req, res) => {
         })
         .catch(console.error);
 })
+
+//add tvshow too watch list
+router.put('/:grab/tvshow/watchlist', (req, res) => {
+    const id = req.params.grab;
+    console.log(id);
+    const userName = req.body.userName;
+    TvShows.findById(id)
+        .then( (tvshow) => {
+            console.log(tvshow);
+            User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.tvshows": tvshow}})
+                .then( (user) => {
+                    res.redirect('/profile/login');
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
+
+
 
 //DELETE
 router.put('/:grab/tvshow/:com', (req, res) => {

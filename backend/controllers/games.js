@@ -1,6 +1,7 @@
 
 const express = require('express');
 const Games = require('../db/models/gameM');
+const User = require('../db/models/profileM');
 const router = express.Router();
 
 
@@ -54,6 +55,32 @@ router.put('/:grab/game', (req, res) => {
         })
         .catch(console.error);
 })
+
+
+
+
+//add movie too watch list
+router.put('/:grab/game/watchlist', (req, res) => {
+    const id = req.params.grab;
+    console.log(id);
+    const userName = req.body.userName;
+    Games.findById(id)
+        .then( (game) => {
+            console.log(game);
+            User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.games": game}})
+                .then( (user) => {
+                    res.redirect('/profile/login');
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+})
+
+
+
+
+
+
 
 //DELETE
 router.put('/:grab/game/:com', (req, res) => {
