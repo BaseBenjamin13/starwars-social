@@ -55,4 +55,19 @@ Standup #6 April 27
         add favorite games to selected user ✅
 
     Today: 
-        
+        have a too watch movie list ✅
+        make add too watch list button on movie ✅
+        display to watch list ✅
+        remove movie from watch list. ✅
+        add tvshow and game to watch list. ✅
+        have delete ✅
+        have watched movie list
+        make turnswitch for needing to type username to delete and look at watch list.
+        make readme.md
+            Include User Stories
+            Include wireframes that you designed during the planning process
+            Have a link to your hosted working app
+
+
+    Tomorrow:
+        Deploy on heroku.

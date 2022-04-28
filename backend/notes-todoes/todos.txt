@@ -141,12 +141,18 @@ April 27
     remove movie from watch list. ✅
     add tvshow and game to watch list. ✅
     have delete ✅
-    have watched movie list
-    make turnswitch for needing username to delete and look at watch list.
+    make readme.md ✅
+        Include User Stories
+        Include wireframes that you designed during the planning process
+        Have a link to your hosted working app
 
+
+April 28
     Deploy on heroku.
+    update readme.md
+    make turnswitch for needing to type username to delete and look at watch list.
 
-
+    have watched movie list
 
 
 
