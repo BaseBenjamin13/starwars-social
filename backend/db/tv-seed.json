@@ -24,5 +24,31 @@
         },
         "likes": 20030, 
         "comments": ["great show, little slow at times but would recommend", "good show loved it", "love this show"]
+    },
+    {
+        "title": "The Book Of Boba Fett",
+        "seasons": 1,
+        "episodes": 7,
+        "img": "https://m.media-amazon.com/images/M/MV5BZjllZjE1MWEtYTJhZC00MWIyLTliMjEtYzM3ODc4YzQ2MjFlXkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_.jpg",
+        "links": {
+            "buy": "https://www.starwars.com/series/the-book-of-boba-fett",
+            "stream": null,
+            "trailer": "https://www.starwars.com/video/official-trailer-the-book-of-boba-fett"
+        },
+        "likes": 2000, 
+        "comments": ["seams kinda cool"]
+    },
+    {
+        "title": "The Bad Batch",
+        "seasons": 1,
+        "episodes": 16,
+        "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIYMW4h0Swh_NGflXsFV4J2CFpcg4imaRbSFAB4Rde8id3YRZv",
+        "links": {
+            "buy": "https://www.starwars.com/series/star-wars-the-bad-batch",
+            "stream": null,
+            "trailer": "https://www.youtube.com/watch?v=kIRei6ORlPE"
+        },
+        "likes": 230300,
+        "comments": ["great show", "loved this show", "not as good as clone wars but good"]
     }
 ]

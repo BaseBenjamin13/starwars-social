@@ -24,25 +24,25 @@ const Games = require('./models/gameM');
 
 
 
-Movie.deleteMany({})
-    .then(() => {
-        Movie.insertMany(movieSeed)
-            .then((data) => {
-                console.log(data);
-            })
-            .catch(console.error)
-            .finally(() => process.exit())
-    })
-
-// TvShows.deleteMany({})
+// Movie.deleteMany({})
 //     .then(() => {
-//         TvShows.insertMany(tvSeed)
+//         Movie.insertMany(movieSeed)
 //             .then((data) => {
 //                 console.log(data);
 //             })
 //             .catch(console.error)
 //             .finally(() => process.exit())
 //     })
+
+TvShows.deleteMany({})
+    .then(() => {
+        TvShows.insertMany(tvSeed)
+            .then((data) => {
+                console.log(data);
+            })
+            .catch(console.error)
+            .finally(() => process.exit())
+    })
 
 // Games.deleteMany({})
 //     .then(() => {

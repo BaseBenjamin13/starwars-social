@@ -142,15 +142,24 @@ April 27
     add tvshow and game to watch list. ✅
     have delete ✅
     make readme.md ✅
-        Include User Stories
-        Include wireframes that you designed during the planning process
-        Have a link to your hosted working app
+        Include User Stories ✅
+        Include wireframes that you designed during the planning process ✅
+    coded for 18 hours today 😂 🥲 ✅
+      
 
 
 April 28
     Deploy on heroku.
-    update readme.md
+    update readme.md Have a link to your hosted working app.
     make turnswitch for needing to type username to delete and look at watch list.
+
+
+
+
+
+
+
+
 
     have watched movie list
 

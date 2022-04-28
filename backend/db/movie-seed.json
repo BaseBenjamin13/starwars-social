@@ -34,5 +34,41 @@
         },
         "likes": 900060,
         "comments": ["amazing movie", "better then episode I and II"]
+    },
+    {
+        "title": "A New Hope",
+        "episode": "IV",
+        "img": "https://lumiere-a.akamaihd.net/v1/images/Star-Wars-New-Hope-IV-Poster_c217085b.jpeg?region=49%2C43%2C580%2C914&width=480",
+        "links": {
+            "buy": "https://www.starwars.com/films/star-wars-episode-iv-a-new-hope",
+            "rent": null,
+            "trailer": "https://www.youtube.com/watch?v=L-_xHEv0l-w"
+        },
+        "likes": 344060,
+        "comments": ["good for its time", "really kicked off star wars"]
+    },
+    {
+        "title": "The Empire Strikes Back",
+        "episode": "V",
+        "img": "https://lumiere-a.akamaihd.net/v1/images/Star-Wars-Empire-Strikes-Back-V-Poster_878f7fce.jpeg?region=25%2C22%2C612%2C953&width=480",
+        "links": {
+            "buy": "https://www.starwars.com/films/star-wars-episode-v-the-empire-strikes-back",
+            "rent": null,
+            "trailer": "https://www.youtube.com/watch?v=JNwNXF9Y6kY"
+        },
+        "likes": 47400,
+        "comments": ["good for its time", "romance drama lol"]
+    },
+    {
+        "title": "Return Of The Jedi",
+        "episode": "VI",
+        "img": "https://lumiere-a.akamaihd.net/v1/images/Star-Wars-Return-Jedi-VI-Poster_a10501d2.jpeg?region=12%2C9%2C618%2C982&width=480",
+        "links": {
+            "buy": "https://www.starwars.com/films/star-wars-episode-vi-return-of-the-jedi",
+            "rent": null,
+            "trailer": "https://www.youtube.com/watch?v=7L8p7_SLzvU"
+        },
+        "likes": 874040,
+        "comments": ["good movie, really see Luke grow up"]
     }
 ]
