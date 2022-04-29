@@ -1,0 +1,73 @@
+
+
+
+
+April 20th 2022
+standup #3 ✅
+    yesterday:
+    i made a delete route.
+    i made create function for games and tv-shows.
+    spent most time on trying to fix wierd bugs like adds comment on refresh and deletes all dulplicates.
+
+    Today: 
+    add delete route to tv-shows and games.
+    make all links open in a new tab.
+    style links to the right side where info will go.
+
+    go back to proposal
+
+Standup #4  April 23 2022
+    Yesterday:
+        made user schema and model 
+        added register form to register users
+        made login form 
+        if correct login itll send user to profile page rendering the personalized data.
+        added password for extra sercurity.
+        made error page, for when user fails to enter right login info.
+        same for register.
+
+    Today: 
+        style error pages add "go back" or "try again" buttons.
+        take login and register buttons out of dropdown.
+        setup favicon.
+        add favorite movies array into profile model.
+        
+
+Standup #5 April 26
+    Sunday: 
+    add favorite movies into selected user ✅
+    delete fav movie ✅
+    learned a lot about session storage ✅
+
+
+    Yesterday: 
+        fix delete route. ✅
+
+    Today:
+        style profile page ✅
+        add favorite tv-shows to selected user ✅
+        add favorite games to selected user ✅
+
+Standup #6 April 27
+    Yesterday: 
+        style profile page ✅
+        add favorite tv-shows to selected user ✅
+        add favorite games to selected user ✅
+
+    Today: 
+        have a too watch movie list ✅
+        make add too watch list button on movie ✅
+        display to watch list ✅
+        remove movie from watch list. ✅
+        add tvshow and game to watch list. ✅
+        have delete ✅
+        have watched movie list
+        make turnswitch for needing to type username to delete and look at watch list.
+        make readme.md
+            Include User Stories
+            Include wireframes that you designed during the planning process
+            Have a link to your hosted working app
+
+
+    Tomorrow:
+        Deploy on heroku.
