@@ -1,13 +1,21 @@
 body {
     background-color: black;
     color: gold;
+    margin: 30px 50px;
 }
 .container {
+    display: flex;
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(20vw, max-content));
+    flex-wrap: wrap;
+/* 
+    justify-content: center; */
+    /* grid-template-columns: repeat(auto-fit, minmax(25vw, max-content)); */
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     grid-gap: 16px;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center;
+    font-size: 1.5rem;
 }
 .singleContainer {
     display: grid;
@@ -48,13 +56,18 @@ body {
 }
 
 .item {
+    /* display: grid; */
+    /* justify-content: center; */
+    /* grid-template-columns: repeat(auto-fit, minmax(50vw, max-content)); */
+    min-width: 250px;
+    
     border: 5px gold solid;
     padding: 20px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 25vw;
+    justify-items: space-between;
+   
 }
 
 .comment-section {
@@ -119,18 +132,11 @@ a:hover {
     height: 150px;
 }
 
-
+/* 
 .img {
     width: 100%;
     height: auto;
-}
-/* Stack overflow but i changed it */
-@media (max-width: 100%) {
-    .item{width: 100%;}
-}
-@media (min-width: 20vw) {
-    .item {width: 100%;}
-/* ^^^^^^ */
+} */
 
 
 /* Buttons.  */
@@ -154,7 +160,7 @@ a:hover {
     /* color: blue; */
 }
 .btn-login {
-    margin-left: 50vw;
+    margin-left: 40vw;
 }
 
 .watch-btn-div {
@@ -166,7 +172,45 @@ a:hover {
     background-color: #00AAFF;
     box-shadow:  1px 1px 1px 1px black;
     margin-top: 1rem;
+    font-size: 150%;
 }
 .watch-btn:hover {
     box-shadow:  1px 1px 1px 1px inset black;
 }
+
+
+.font-adjust {
+    font-size: calc(16px + 1vw);
+    line-height: calc(1em + 0.5vw);
+    font-display: inline;
+}
+
+
+
+
+/* 
+.poster {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+} */
+
+.title-div {
+    font-size: 1.5rem;
+}
+
+/* Stack overflow but i changed it */ 
+@media (max-width: 100px) {
+    .item{width: 100%;}
+    .title-div{font-size: 12px;}
+}
+@media (min-width: 20vw) {
+    .item {width: 100%;}
+/* ^^^^^^ */
+}
+
+
+
+
+
+

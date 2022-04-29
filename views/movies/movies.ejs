@@ -4,12 +4,18 @@
 <div class="container">
 
     <% for(let i=0; i < movies.length; i++){ %>
-        <div class="item container-sm" >
-            <a href='/movies/<%=movies[i]._id %>/movie'>
-                <h1><%=movies[i].title %></h1>
-                <img src="<%=movies[i].img %>" alt="" class="img img-thumbnail">
-            </a>
+        <div class="item" >
             
+                <a href='/movies/<%=movies[i]._id %>/movie'>
+                    <!-- <div class="poster"> -->
+                    <div class="title-div">
+                        <h1 class="font-adjust"><%=movies[i].title %></h1>
+                    </div>
+                    <!-- </div> -->
+                    <div class="img-div">
+                        <img src="<%=movies[i].img %>" alt="" class="img  img-thumbnail">
+                    </div>
+                </a>
         </div>
     <% } %>     
 
