@@ -120,6 +120,17 @@ a:hover {
 }
 
 
+.img {
+    width: 100%;
+    height: auto;
+}
+/* Stack overflow but i changed it */
+@media (max-width: 100%) {
+    .item{width: 100%;}
+}
+@media (min-width: 20vw) {
+    .item {width: 100%;}
+/* ^^^^^^ */
 
 
 /* Buttons.  */

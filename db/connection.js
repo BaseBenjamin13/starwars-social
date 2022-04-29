@@ -22,7 +22,7 @@ const mongoURI =
     process.env.NODE_ENV === 'production'
     ? process.env.DB_URL
     // if your atlas db
-    : 'mongodb+srv://benjamin_m:Baseballbenji69@cluster0.9xnz1.mongodb.net/starwarsSocial?retryWrites=true&w=majority';
+    : process.env.DEV_DB_URL
 
 
 mongoose.connect(mongoURI)
