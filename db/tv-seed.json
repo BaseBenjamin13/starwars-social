@@ -6,8 +6,9 @@
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE_EbKrjeTz2Zd9MeLwCStOhrf_rXYgbbleG8_FEl36tf8qcRS",
         "links": {
             "buy": null,
+            "emTrailer": "https://www.youtube.com/embed/dXtA_xYVhUU",
             "stream": null,
-            "trailer": null
+            "trailer": "https://www.youtube.com/watch?v=dXtA_xYVhUU"
         },
         "likes": 50000000, 
         "comments": "Best show ever made" 
@@ -19,8 +20,9 @@
         "img": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
         "links": {
             "buy": null,
+            "emTrailer": "https://www.youtube.com/watch?v=eW7Twd85m2g",
             "stream": null,
-            "trailer": null
+            "trailer": "https://www.youtube.com/watch?v=eW7Twd85m2g"
         },
         "likes": 20030, 
         "comments": ["great show, little slow at times but would recommend", "good show loved it", "love this show"]
@@ -32,6 +34,7 @@
         "img": "https://m.media-amazon.com/images/M/MV5BZjllZjE1MWEtYTJhZC00MWIyLTliMjEtYzM3ODc4YzQ2MjFlXkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_.jpg",
         "links": {
             "buy": "https://www.starwars.com/series/the-book-of-boba-fett",
+            "emTrailer": "https://www.youtube.com/embed/rOJ1cw6mohw",
             "stream": null,
             "trailer": "https://www.starwars.com/video/official-trailer-the-book-of-boba-fett"
         },
@@ -45,6 +48,7 @@
         "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIYMW4h0Swh_NGflXsFV4J2CFpcg4imaRbSFAB4Rde8id3YRZv",
         "links": {
             "buy": "https://www.starwars.com/series/star-wars-the-bad-batch",
+            "emTrailer": "https://www.youtube.com/embed/kIRei6ORlPE",
             "stream": null,
             "trailer": "https://www.youtube.com/watch?v=kIRei6ORlPE"
         },

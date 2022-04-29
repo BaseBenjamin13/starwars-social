@@ -8,6 +8,7 @@ const TvShowsSchema = new mongoose.Schema({
     img: {type: String, required: true},
     links: {
         buy: String, 
+        emTrailer: String,
         stream: String,
         trailer: String
     },

@@ -5,6 +5,7 @@
         "img": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg",
         "links": {
             "buy": "https://www.starwars.com/films/star-wars-episode-i-the-phantom-menace",
+            "emTrailer": "https://www.youtube.com/embed/bD7bpG-zDJQ",
             "rent": null,
             "trailer": "https://www.youtube.com/watch?v=bD7bpG-zDJQ"
         },
@@ -17,6 +18,7 @@
         "img": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oZNPzxqM2s5DyVWab09NTQScDQt.jpg",
         "links": {
             "buy": "https://www.starwars.com/films/star-wars-episode-ii-attack-of-the-clones",
+            "emTrailer": "https://www.youtube.com/embed/CO2OLQ2kiq8",
             "rent": null,
             "trailer": "https://www.youtube.com/watch?v=CO2OLQ2kiq8"
         },
@@ -29,6 +31,7 @@
         "img": "https://m.media-amazon.com/images/I/71WgjTKJ00L._AC_SY679_.jpg",
         "links": {
             "buy": "https://www.starwars.com/films/star-wars-episode-iii-revenge-of-the-sith",
+            "emTrailer": "https://www.youtube.com/embed/5UnjrG_N8hU",
             "rent": null,
             "trailer": "https://www.youtube.com/watch?v=5UnjrG_N8hU"
         },
@@ -41,6 +44,7 @@
         "img": "https://lumiere-a.akamaihd.net/v1/images/Star-Wars-New-Hope-IV-Poster_c217085b.jpeg?region=49%2C43%2C580%2C914&width=480",
         "links": {
             "buy": "https://www.starwars.com/films/star-wars-episode-iv-a-new-hope",
+            "emTrailer": "https://www.youtube.com/embed/L-_xHEv0l-w",
             "rent": null,
             "trailer": "https://www.youtube.com/watch?v=L-_xHEv0l-w"
         },
@@ -53,6 +57,7 @@
         "img": "https://lumiere-a.akamaihd.net/v1/images/Star-Wars-Empire-Strikes-Back-V-Poster_878f7fce.jpeg?region=25%2C22%2C612%2C953&width=480",
         "links": {
             "buy": "https://www.starwars.com/films/star-wars-episode-v-the-empire-strikes-back",
+            "emTrailer": "https://www.youtube.com/embed/JNwNXF9Y6kY",
             "rent": null,
             "trailer": "https://www.youtube.com/watch?v=JNwNXF9Y6kY"
         },
@@ -65,6 +70,7 @@
         "img": "https://lumiere-a.akamaihd.net/v1/images/Star-Wars-Return-Jedi-VI-Poster_a10501d2.jpeg?region=12%2C9%2C618%2C982&width=480",
         "links": {
             "buy": "https://www.starwars.com/films/star-wars-episode-vi-return-of-the-jedi",
+            "emTrailer": "https://www.youtube.com/embed/7L8p7_SLzvU",
             "rent": null,
             "trailer": "https://www.youtube.com/watch?v=7L8p7_SLzvU"
         },

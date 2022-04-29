@@ -7,6 +7,7 @@ const GameSchema = new mongoose.Schema({
     img: {type: String, required: true},
     links: {
         buy: String, 
+        emTrailer: String,
         rent: String,
         trailer: String
     },

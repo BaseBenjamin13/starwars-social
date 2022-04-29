@@ -5,8 +5,9 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/1/15/The_phantom_menace_video_game.jpg",
         "links": {
             "buy": "https://www.amazon.com/Star-Wars-Episode-Phantom-Menace-PC/dp/B00000IZ7Q",
+            "emTrailer": "https://www.youtube.com/embed/73vvhcMp1_E",
             "rent": null,
-            "trailer": null
+            "trailer": "https://www.youtube.com/watch?v=73vvhcMp1_E"
         },
         "likes": "234432",
         "comments": ["great throwback to the good old days", "great game for its time"]
@@ -17,8 +18,9 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/2/28/The_Force_Unleashed.jpg",
         "links": {
             "buy": "https://store.steampowered.com/app/32430/STAR_WARS__The_Force_Unleashed_Ultimate_Sith_Edition/",
+            "emTrailer": "https://www.youtube.com/embed/RkBiYpD3SDc",
             "rent": null,
-            "trailer": null
+            "trailer": "https://www.youtube.com/watch?v=RkBiYpD3SDc"
         },
         "likes": "2348482",
         "comments": ["great throwback to the good old days", "love this game, soo fun"]
@@ -29,8 +31,9 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/e/ea/StarWarsBattlefront2_PC.jpg",
         "links": {
             "buy": "https://store.steampowered.com/app/6060/Star_Wars_Battlefront_2_Classic_2005/",
+            "emTrailer": "https://www.youtube.com/embed/KiKT9i2Ourc",
             "rent": null,
-            "trailer": null
+            "trailer": "https://www.youtube.com/watch?v=KiKT9i2Ourc"
         },
         "likes": "2348482",
         "comments": ["another great throwback"]
@@ -41,8 +44,9 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/4/4d/Star_Wars_-_Republic_Commando_Coverart.png",
         "links": {
             "buy": "https://store.steampowered.com/app/6000/STAR_WARS_Republic_Commando/",
+            "emTrailer": "https://www.youtube.com/embed/MTi1KSZt5Jw",
             "rent": null,
-            "trailer": null
+            "trailer": "https://www.youtube.com/watch?v=MTi1KSZt5Jw"
         },
         "likes": "234848223",
         "comments": ["loved this game", "this game made me want to be a commando when i was younger"]
