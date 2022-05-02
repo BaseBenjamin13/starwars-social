@@ -7,52 +7,133 @@ const Games = require('../db/models/gameM');
 const router = express.Router();
 
 
-let watchUser;
+
+// sesion login attemp 3 
+const passport = require('passport');
+const bcrypt = require('bcrypt');
+const flash = require('express-flash');
+const session = require('express-session');
+
+router.use(flash());
+router.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+
+const initializePassport = require('../passport-config');
+initializePassport(
+    passport,
+    userName => users.find(user => user.userName === userName),
+    id => users.find(user => user.id === id)
+)
+
+let users = [];
+User.find()
+    .then((usersR) => {
+        return users = usersR;
+    })
+    .catch(console.error);
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+// let watchUser;
+
+//profile
+router.get('/', checkAuthenticated, (req, res) => {
+    User.findById(req.user._id)
+        .then((usersR) => {
+            req.login(usersR, function(err) {
+                if (err) { return next(err); }
+                res.render('./profile/profile', { user: req.user });
+            })
+        })
+    .catch(console.error);
+    // User.find()
+    // .then((usersR) => {
+    //     res.render('./profile/profile', { user: req.user });
+    //     return users = usersR;
+    // })
+    // .catch(console.error);
+})
 
 //login
-router.get('/login', (req, res) => {
+router.get('/login', checkNotAuthenticated, (req, res) => {
     res.render('./profile/login');
 })
 
-router.post('/login', (req, res) => {
-        User.findOne({userName: req.body.userName, password: req.body.password})
-        .then((user) => {
-            //Checking if the users login is correct.
-            if (user) {
-                res.render('./profile/profile', {user : user});
-                watchUser = user;
-            } else {
-                res.render('./error-pages/wronglog')
-            }
+router.post('/login', checkNotAuthenticated, passport.authenticate('local', { 
+    // sesion login attemp 3 
+    successRedirect: '/profile',
+    failureRedirect: '/profile/login',
+    failureFlash: true
+}))
+        // User.findOne({userName: req.body.userName, password: req.body.password})
+        // .then((user) => {
+        //     //Checking if the users login is correct.
+        //     if (user) {
+        //         res.render('./profile/profile', {user : user});
+        //         watchUser = user;
+        //     } else {
+        //         res.render('./error-pages/wronglog')
+        //     }
             
-        })
-        .catch(console.error);
+        // })
+        // .catch(console.error);
   
-})
+// })
 
 
 
 
 
 //Register
-router.get('/register', (req, res) => {
+router.get('/register', checkNotAuthenticated, (req, res) => {
     res.render('./profile/register');
 })
 
-router.post('/', (req, res) => {
-    if (!req.body.userName || !req.body.password) {
-        res.render('./error-pages/register-failed')
-        // res.send('<h1>failed to register</h1>')
-    } else {
-        User.create(req.body)
-        .then((user) => {     
-            // res.render('./profile/profile', {user : user});
-            res.redirect('/profile/login');
-        console.log({user})
-    })
-    // res.render('./error-pages/wronglog')
-    .catch(console.error);
+router.post('/register', checkNotAuthenticated, async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10)
+        User.create({
+            id: Date.now().toString(),
+            userName: req.body.userName,
+            password: hashedPassword,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            age: req.body.age,
+            gender: req.body.gender,
+            profileImg: req.body.profileImg,
+        })
+        res.redirect('/profile/login');
+        return users = User.find();
+
+    } catch {
+        res.redirect('/profile/register');
     }
+    console.log(users);
+
+// (req, res) => {
+//     if (!req.body.userName || !req.body.password) {
+//         res.render('./error-pages/register-failed')
+//         // res.send('<h1>failed to register</h1>')
+//     } else {
+//         User.create(req.body)
+//         .then((user) => {     
+//             // res.render('./profile/profile', {user : user});
+//             res.redirect('/profile/login');
+//         console.log({user})
+//     })
+//     // res.render('./error-pages/wronglog')
+//     .catch(console.error);
+//     }
       
 })
 
@@ -61,11 +142,11 @@ router.post('/', (req, res) => {
 
 
 //add movie too fav list
-router.put('/login', (req, res) => {
+router.put('/login', checkAuthenticated, (req, res) => {
     const id = req.body.favMovieList;
     Movies.findById(id)
         .then( (movie) => {
-            User.findOneAndUpdate({ userName: req.body.userName}, {$push: {favMovieList: movie}})
+            User.findOneAndUpdate({ userName: req.user.userName}, {$push: {favMovieList: movie}})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
@@ -77,11 +158,11 @@ router.put('/login', (req, res) => {
 })
 
 //remove fav movie 
-router.put('/login/:movieId/moviedel', (req, res) => {
+router.put('/login/:movieId/moviedel', checkAuthenticated, (req, res) => {
     const id = req.params.movieId;
     Movies.findById(id)
         .then( (movie) => {
-            User.findOneAndUpdate({ userName: req.body.userName}, {$pull: {favMovieList: movie}})
+            User.findOneAndUpdate({ userName: req.user.userName}, {$pull: {favMovieList: movie}})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
@@ -99,11 +180,11 @@ router.put('/login/:movieId/moviedel', (req, res) => {
 
 
 //add tvshow too fav list
-router.put('/login/tvshow', (req, res) => {
+router.put('/login/tvshow', checkAuthenticated, (req, res) => {
     const id = req.body.favTvshowList;
     TvShows.findById(id)
         .then( (tvshow) => {
-            User.findOneAndUpdate({ userName: req.body.userName}, {$push: {favTvshowList: tvshow}})
+            User.findOneAndUpdate({ userName: req.user.userName}, {$push: {favTvshowList: tvshow}})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
@@ -114,11 +195,11 @@ router.put('/login/tvshow', (req, res) => {
 })
 
 //remove fav tvshow
-router.put('/login/:tvshowId/tvshowdel', (req, res) => {
+router.put('/login/:tvshowId/tvshowdel', checkAuthenticated, (req, res) => {
     const id = req.params.tvshowId;
     TvShows.findById(id)
         .then( (tvshow) => {
-            User.findOneAndUpdate({ userName: req.body.userName}, {$pull: {favTvshowList: tvshow}})
+            User.findOneAndUpdate({ userName: req.user.userName}, {$pull: {favTvshowList: tvshow}})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
@@ -135,11 +216,11 @@ router.put('/login/:tvshowId/tvshowdel', (req, res) => {
 
 
 //add game too fav list
-router.put('/login/game', (req, res) => {
+router.put('/login/game', checkAuthenticated, (req, res) => {
     const id = req.body.favGameList;
     Games.findById(id)
         .then( (game) => {
-            User.findOneAndUpdate({ userName: req.body.userName}, {$push: {favGameList: game }})
+            User.findOneAndUpdate({ userName: req.user.userName}, {$push: {favGameList: game }})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
@@ -150,11 +231,11 @@ router.put('/login/game', (req, res) => {
 })
 
 //remove fav game
-router.put('/login/:gameId/gamedel', (req, res) => {
+router.put('/login/:gameId/gamedel', checkAuthenticated, (req, res) => {
     const id = req.params.gameId;
     Games.findById(id)
         .then( (game) => {
-            User.findOneAndUpdate({ userName: req.body.userName}, {$pull: {favGameList: game }})
+            User.findOneAndUpdate({ userName: req.user.userName}, {$pull: {favGameList: game }})
                 .then( (user) => {
                     // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
@@ -171,58 +252,99 @@ router.put('/login/:gameId/gamedel', (req, res) => {
 
 
 //get watch list 
-router.get('/login/watchlist', (req, res) => {
-    User.findOne({ userName: watchUser.userName})
-        .then( (user) => {
-            res.render('./profile/watch-list', { user : user})
+router.get('/login/watchlist', checkAuthenticated, (req, res, next) => {
+    
+    User.findById(req.user._id)
+        .then((usersR) => {
+            req.login(usersR, function(err) {
+                if (err) { return next(err); }
+                res.render('./profile/watch-list', { user : req.user})
+            })
         })
-        .catch(console.error);
+    .catch(console.error);
+        
+    // User.findOne({ userName: watchUser.userName})
+    //     .then( (user) => {
+    //         res.render('./profile/watch-list', { user : user})
+    //     })
+    //     .catch(console.error);
 })
+
+
+
+
+
+
+
 //remove movie from watch list 
-router.put('/login/:grab/watchlist/moviedel', (req, res) => {
+router.put('/login/:grab/watchlist/moviedel', checkAuthenticated, (req, res) => {
     const id = req.params.grab;
-    const userName = req.body.userName;
-    //{ userName: watchUser.userName} find by saved userName
     Movies.findById(id)
         .then( (movie) => {
-            User.findOneAndUpdate({ userName: userName }, {$pull: {"watchList.movies": movie}})
+            User.findOneAndUpdate({ userName: req.user.userName }, {$pull: {"watchList.movies": movie}})
                 .then( (user) => {
-                    res.redirect('/profile/login');
+                    res.redirect('/profile/login/watchlist');
                 })
                 .catch(console.error);
         })
         .catch(console.error);
 })
+
 //remove tvshow from watch list 
-router.put('/login/:grab/watchlist/tvshowdel', (req, res) => {
+router.put('/login/:grab/watchlist/tvshowdel', checkAuthenticated, (req, res) => {
     const id = req.params.grab;
-    const userName = req.body.userName;
-    //{ userName: watchUser.userName} find by saved userName
     TvShows.findById(id)
         .then( (tvshow) => {
-            User.findOneAndUpdate({ userName: userName }, {$pull: {"watchList.tvshows": tvshow}})
+            User.findOneAndUpdate({ userName: req.user.userName }, {$pull: {"watchList.tvshows": tvshow}})
                 .then( (user) => {
-                    res.redirect('/profile/login');
+                    res.redirect('/profile/login/watchlist');
                 })
                 .catch(console.error);
         })
         .catch(console.error);
 })
+
 //remove game from watch list 
-router.put('/login/:grab/watchlist/gamedel', (req, res) => {
+router.put('/login/:grab/watchlist/gamedel', checkAuthenticated, (req, res) => {
     const id = req.params.grab;
-    const userName = req.body.userName;
-    //{ userName: watchUser.userName} find by saved userName
     Games.findById(id)
         .then( (game) => {
-            User.findOneAndUpdate({ userName: userName }, {$pull: {"watchList.games": game}})
+            User.findOneAndUpdate({ userName: req.user.userName }, {$pull: {"watchList.games": game}})
                 .then( (user) => {
-                    res.redirect('/profile/login');
+                    res.redirect('/profile/login/watchlist');
                 })
                 .catch(console.error);
         })
         .catch(console.error);
 })
+
+
+//dosent work
+router.delete('/logout', (req, res) => {
+    req.logOut()
+    res.redirect('/login')
+})
+
+
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+
+    res.redirect('/profile/login');
+}
+
+function checkNotAuthenticated(req, res, next){
+    if (req.isAuthenticated()) {
+        return res.redirect('/profile');
+    }
+    next();
+}
+
+
+
+
+
 
 
 

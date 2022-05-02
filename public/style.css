@@ -169,14 +169,14 @@ a:hover {
     margin-top: 1rem;
     text-align: center;
 }
-.watch-btn {
+.watch-btn, .logout-btn {
     background-color: #00AAFF;
     box-shadow:  1px 1px 1px 1px black;
     margin-top: 1rem;
     font-size: 150%;
     border-radius: 22px 5%;
 }
-.watch-btn:hover {
+.watch-btn:hover, .logout-btn:hover {
     box-shadow:  1px 1px 1px 1px inset black;
 }
 
@@ -185,6 +185,10 @@ a:hover {
     font-size: calc(16px + 1vw);
     line-height: calc(1em + 0.5vw);
     font-display: inline;
+}
+.logout-btn {
+    background-color: #dc3545;
+    /* background: linear-gradient(to right, #00AAFF, #dc3545); */
 }
 
 
