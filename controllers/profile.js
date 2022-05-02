@@ -319,11 +319,14 @@ router.put('/login/:grab/watchlist/gamedel', checkAuthenticated, (req, res) => {
 })
 
 
-//dosent work
+//Logout User
 router.delete('/logout', (req, res) => {
-    req.logOut()
-    res.redirect('/login')
+    req.logout()
+    res.redirect('/profile/login')
 })
+
+
+
 
 
 function checkAuthenticated(req, res, next) {

@@ -17,7 +17,7 @@
     <div class="watch-btn-div">
         <a href="/profile/login/watchlist"><button class="watch-btn">Watch/Play List</button></a>
         <br>
-        <form action="/logout?_method=DELETE" method="POST">
+        <form action="/profile/logout?_method=DELETE" method="POST">
             <button type="submit" class="logout-btn">Log Out</button>
         </form>
         <!-- <a href="#"><button class="watch-btn">Watched/Played List</button></a> -->
@@ -121,11 +121,8 @@
                 <h1><%=user.favMovieList[i].title %></h1>
             </a>
             <img src="<%=user.favMovieList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+            <br>
             <form action="/profile/login/<%=user.favMovieList[i]._id %>/moviedel/?_method=put" method="POST" class="d-inline">
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">@</span>
-                    <input type="text" class="form-control" name="userName" placeholder="Your username" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
                 <input type="submit" value="Delete" name="delete" class="btn btn-danger">
             </form>
         </div>
@@ -138,11 +135,8 @@
                 <h1><%=user.favTvshowList[i].title %></h1>
             </a>
             <img src="<%=user.favTvshowList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+            <br>
             <form action="/profile/login/<%=user.favTvshowList[i]._id %>/tvshowdel/?_method=put" method="POST" class="d-inline">
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">@</span>
-                    <input type="text" class="form-control" name="userName" placeholder="Your username" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
                 <input type="submit" value="Delete" name="delete" class="btn btn-danger">
             </form>
         </div>
@@ -155,11 +149,8 @@
                 <h1><%=user.favGameList[i].title %></h1>
             </a>
             <img src="<%=user.favGameList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+            <br>
             <form action="/profile/login/<%=user.favGameList[i]._id %>/gamedel/?_method=put" method="POST" class="d-inline">
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">@</span>
-                    <input type="text" class="form-control" name="userName" placeholder="Your username" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
                 <input type="submit" value="Delete" name="delete" class="btn btn-danger">
             </form>
         </div>
