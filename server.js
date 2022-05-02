@@ -1,10 +1,33 @@
 
 require('dotenv').config();
 const express = require('express');
-// const cors = require('cors')
 const path = require('path');
-// const mongoose = require('./db/connection');
-// const bodyParser = require('body-parser');
+const mongoose = require('./db/connection');
+
+
+
+//express session attemped 2
+const passport = require('passport');
+const bcrypt = require('bcrypt');
+const flash = require('express-flash');
+const session = require('express-session');
+
+const initializePassport = require('./passport-config');
+initializePassport(
+    passport,
+    userName => users.find(user => user.userName === userName),
+    id => users.find(user => user.id === id)
+)
+const User = require('./db/models/profileM');
+let users = [];
+User.find()
+    .then((usersR) => {
+        return users = usersR;
+    })
+    .catch(console.error);
+
+//^^^^^^^^^^^^^^^^^^^^
+
 
 const methodOverride = require('method-override');
 require('ejs');
@@ -19,20 +42,34 @@ const app = express();
 
 
 
-// app.use(express.static('public'));
+
 
 
 app.set('view engine', 'ejs');
  
 
 app.use(ejsLayouts);
-// app.use(cors());
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static('public')); // to use css imgs in public folder
 
+
+
+
+//express session attemped 3
+
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//^^^^^^^^^^^^^^^^^^^^
 
 
 
