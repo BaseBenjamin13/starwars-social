@@ -1,7 +1,7 @@
 # starwars-social
 Star Wars Social. Where all star wars fans come to unite. All star wars fans big and small can come to Star Wars Social to talk about, like, review and make favorites of all movies, shows, games, and make watch/play list for later.
 
-Fall in love with Star Wars Social here: ADD HEROKU LINK
+Fall in love with Star Wars Social here: [StarWars Social](https://starwars-social.herokuapp.com/movies)
 
 ## Using [JavaScript, Node.js, EJS, Express, MongoDB, Mongooose, Bootstrap]
 
