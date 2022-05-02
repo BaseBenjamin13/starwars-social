@@ -47,7 +47,7 @@ router.get('/:grab/movie/liked', (req, res) => {
         .catch(console.error)
 })
 
-//CREATE
+//CREATE comment
 router.put('/:grab/movie', (req, res) => {
     const id = req.params.grab;
     Movies.findOneAndUpdate({ _id: id}, {$push: {comments: req.body.comments}})
@@ -84,7 +84,7 @@ router.put('/:grab/movie/watchlist', (req, res) => {
 })
 
 
-//DELETE
+//DELETE comment
 router.put('/:grab/movie/:com', (req, res) => {
     const id = req.params.grab;
     const com = req.params.com;
