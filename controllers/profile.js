@@ -8,21 +8,11 @@ const router = express.Router();
 
 
 
-// sesion login attemp 3 
+// sesion login attemp 3 learned from web dev simpliefied on youtube
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const flash = require('express-flash');
 const session = require('express-session');
-
-router.use(flash());
-router.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
-
-router.use(passport.initialize());
-router.use(passport.session());
 
 
 const initializePassport = require('../passport-config');
@@ -56,12 +46,6 @@ router.get('/', checkAuthenticated, (req, res) => {
             })
         })
     .catch(console.error);
-    // User.find()
-    // .then((usersR) => {
-    //     res.render('./profile/profile', { user: req.user });
-    //     return users = usersR;
-    // })
-    // .catch(console.error);
 })
 
 //login
@@ -72,35 +56,34 @@ router.get('/login', checkNotAuthenticated, (req, res) => {
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', { 
     // sesion login attemp 3 
     successRedirect: '/profile',
-    failureRedirect: '/profile/login',
+    failureRedirect: '/profile/login/failure',
+    // failureRender: './error-pages/wronglog',
     failureFlash: true
 }))
-        // User.findOne({userName: req.body.userName, password: req.body.password})
-        // .then((user) => {
-        //     //Checking if the users login is correct.
-        //     if (user) {
-        //         res.render('./profile/profile', {user : user});
-        //         watchUser = user;
-        //     } else {
-        //         res.render('./error-pages/wronglog')
-        //     }
-            
-        // })
-        // .catch(console.error);
-  
-// })
+      
+
+router.get('/login/failure', (req, res) => {
+    res.render('./error-pages/wronglog')
+})
+
+
 
 
 
 
 
 //Register
+router.get('/register/failure', (req, res) => {
+    res.render('./error-pages/register-failed')
+})
+
 router.get('/register', checkNotAuthenticated, (req, res) => {
     res.render('./profile/register');
 })
 
 router.post('/register', checkNotAuthenticated, async (req, res) => {
     try {
+        if (req.body.userName && req.body.password) {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
         User.create({
             id: Date.now().toString(),
@@ -114,26 +97,13 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
         })
         res.redirect('/profile/login');
         return users = User.find();
-
+    } else {
+        res.redirect('register/failure');
+    }
     } catch {
         res.redirect('/profile/register');
     }
     console.log(users);
-
-// (req, res) => {
-//     if (!req.body.userName || !req.body.password) {
-//         res.render('./error-pages/register-failed')
-//         // res.send('<h1>failed to register</h1>')
-//     } else {
-//         User.create(req.body)
-//         .then((user) => {     
-//             // res.render('./profile/profile', {user : user});
-//             res.redirect('/profile/login');
-//         console.log({user})
-//     })
-//     // res.render('./error-pages/wronglog')
-//     .catch(console.error);
-//     }
       
 })
 
@@ -263,11 +233,6 @@ router.get('/login/watchlist', checkAuthenticated, (req, res, next) => {
         })
     .catch(console.error);
         
-    // User.findOne({ userName: watchUser.userName})
-    //     .then( (user) => {
-    //         res.render('./profile/watch-list', { user : user})
-    //     })
-    //     .catch(console.error);
 })
 
 
@@ -327,8 +292,9 @@ router.delete('/logout', (req, res) => {
 
 
 
-
-
+// learned from web dev simpliefied on youtube
+// check to see if a user is or is not logged in
+// if user is logined in just continue to requested page
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
@@ -336,7 +302,7 @@ function checkAuthenticated(req, res, next) {
 
     res.redirect('/profile/login');
 }
-
+//if user is not logged in then if user is not logged in then continue on requested page 
 function checkNotAuthenticated(req, res, next){
     if (req.isAuthenticated()) {
         return res.redirect('/profile');
@@ -348,22 +314,6 @@ function checkNotAuthenticated(req, res, next){
 
 
 
-
-
-
-// router.put('/:movieId/login/:userId', (req, res) => {
-//     const userId = req.params.userId;
-//     const movieId = req.params.movieId;
-//     Movies.findById(movieId)
-//         .then( (movie) => {
-//             res.redirect('/profile/login')
-//             User.findOneAndUpdate({_id: userId}, {$pull: { favMovieList: movie._id }})
-//                 .then( (user) => {
-                    
-//                     console.log(userId);
-//                 })
-//         })
-// })    
 
 
 

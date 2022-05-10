@@ -6,7 +6,8 @@ const mongoose = require('./db/connection');
 
 
 
-//express session attemped 2
+//express session attemped 3, learned passport from web dev simpliefied on youtube
+//refactored all the code
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const flash = require('express-flash');
@@ -57,7 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-//express session attemped 3
+//express session attemped 3 learned from web dev simpliefied on youtube
 
 app.use(flash());
 app.use(session({
