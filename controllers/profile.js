@@ -22,10 +22,11 @@ initializePassport(
     id => users.find(user => user.id === id)
 )
 
-
+const Secret = 'secret'
 router.use(flash());
 router.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: Secret,
+    // secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }));
