@@ -14,6 +14,15 @@ const bcrypt = require('bcrypt');
 const flash = require('express-flash');
 const session = require('express-session');
 
+router.use(flash());
+router.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+router.use(passport.initialize());
+router.use(passport.session());
 
 const initializePassport = require('../passport-config');
 initializePassport(
@@ -22,17 +31,6 @@ initializePassport(
     id => users.find(user => user.id === id)
 )
 
-const Secret = 'secret'
-router.use(flash());
-router.use(session({
-    secret: Secret,
-    // secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
-
-router.use(passport.initialize());
-router.use(passport.session());
 
 
 let users = [];
