@@ -9,20 +9,6 @@ const Games = require('./models/gameM');
 
 
 
-// From Alana from Will Sutton
-// const importApiData = require(‘./rawg-game-seeds.json’);
-// importApiData.map(item => {
-//     return {
-//         id: item._id,
-//         //all the fields that i want
-        // rename fields to match api field and or 
-        // copy and paste your field and value type into here
-//         notes: ‘unowned’
-//     }
-// });
-
-
-
 
 Movie.deleteMany({})
     .then(() => {

@@ -1,7 +1,5 @@
 
-<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 
-<!-- <h1>Welcome</h1> -->
 
 <div class="singleContainer">
 
@@ -21,12 +19,8 @@
             <br>
             <h2><a href="/movies/<%=movie._id %>/movie/liked"><button class="btn-success">Like</button></a> : <%=movie.likes %></h2>
             <br>
-            <!-- <a href="#" target="_blank"><button class="btn-primary">Add to Watchlist</button></a> -->
+       
             <form action="/movies/<%=movie._id %>/movie/watchlist/?_method=put" method="POST">
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">@</span>
-                    <input type="text" class="form-control" name="userName" placeholder="Your username" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
                 <input type="submit" class="btn-primary" value="Add to watchlist" />
             </form>
         </div>
@@ -43,17 +37,13 @@ src="<%=movie.links.emTrailer %>">
 <br><br>
 
 <div class="commentContainer">
-    <!-- <div>
-        <label for="comments">Comment on this movie</label>
-        <textarea name="comments" id="comments" rows="3" cols="40">Enter comment here</textarea>
-    </div> -->
+
     <form action="/movies/<%=movie._id %>/movie/?_method=put" method="POST">
         <div class="comment-section item">
             <label for="comments" class="form-label">Comment on this Movie</label>
             <textarea class="" name="comments" id="comments" placeholder="Enter comment here" rows="3"></textarea>
         </div>
         <input type="submit" class="btn btn-primary" />
-        <!-- <a href="#homepage" class="btn btn-secondary">Cancel</a> -->
     </form>
 
     <div>
@@ -67,12 +57,6 @@ src="<%=movie.links.emTrailer %>">
         <% } %> 
     </div>
 </div>
-
-<!-- <script>
-    function liked() {
-        movie.likes = movie.likes + 1;
-    }
-</script> -->
 
 
 

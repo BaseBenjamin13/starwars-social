@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
             res.render('./tv-shows/tv-shows', {tvShows: tvShows});
         })
         .catch(console.error)
-    // res.render('./tv-shows/tv-shows');
+
 })
 
 //filter most liked tv shows
@@ -27,7 +27,7 @@ router.get('/:grab/tvshow', (req, res) => {
     const id = req.params.grab;
     TvShows.findById(id)
         .then((tvShow) => {
-            // res.json(movie)
+
             res.render('./tv-shows/tv-show', { tvShow: tvShow})
         })
         .catch(console.error)
@@ -50,7 +50,7 @@ router.put('/:grab/tvshow', (req, res) => {
         .then( () => {
             TvShows.findById(id)
                 .then((tvShow) => {
-                    // res.json(movie)
+                    
                     res.render('./tv-shows/tv-show', { tvShow: tvShow })
                 })
         })
@@ -60,18 +60,22 @@ router.put('/:grab/tvshow', (req, res) => {
 //add tvshow too watch list
 router.put('/:grab/tvshow/watchlist', (req, res) => {
     const id = req.params.grab;
-    console.log(id);
-    const userName = req.body.userName;
-    TvShows.findById(id)
-        .then( (tvshow) => {
-            console.log(tvshow);
-            User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.tvshows": tvshow}})
-                .then( (user) => {
-                    res.redirect('/profile/login');
-                })
-                .catch(console.error);
-        })
-        .catch(console.error);
+
+    if(req.user) { 
+    const userName = req.user.userName;
+        TvShows.findById(id)
+            .then( (tvshow) => {
+                console.log(tvshow);
+                User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.tvshows": tvshow}})
+                    .then( (user) => {
+                        res.redirect('/profile');
+                    })
+                    .catch(console.error);
+            })
+            .catch(console.error);
+        } else {
+            res.redirect('/profile/login')
+        }
 })
 
 
@@ -81,15 +85,15 @@ router.put('/:grab/tvshow/watchlist', (req, res) => {
 router.put('/:grab/tvshow/:com', (req, res) => {
     const id = req.params.grab;
     const com = req.params.com;
-    // const commentsIndex = `comments.${com}`;
+
     TvShows.findOneAndUpdate({ _id: id}, {$pull: { comments: com }})
         .then( () => {
-            // res.redirect('./movies/movie')
+           
             TvShows.findById(id)
                 .then((tvShow) => {
-                    // res.json(movie)
+               
                     res.render('./tv-shows/tv-show', { tvShow: tvShow })
-                    // res.redirect('./movies/movie')
+                
                 })
         })
         .catch(console.error);

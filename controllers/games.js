@@ -27,7 +27,6 @@ router.get('/:grab/game', (req, res) => {
     const id = req.params.grab;
     Games.findById(id)
         .then((game) => {
-            // res.json(movie)
             res.render('./games/game', { game: game})
         })
         .catch(console.error)
@@ -62,18 +61,24 @@ router.put('/:grab/game', (req, res) => {
 //add movie too watch list
 router.put('/:grab/game/watchlist', (req, res) => {
     const id = req.params.grab;
-    console.log(id);
-    const userName = req.body.userName;
-    Games.findById(id)
-        .then( (game) => {
-            console.log(game);
-            User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.games": game}})
-                .then( (user) => {
-                    res.redirect('/profile/login');
-                })
-                .catch(console.error);
-        })
-        .catch(console.error);
+
+    if(req.user) { 
+
+    const userName = req.user.userName;
+
+        Games.findById(id)
+            .then( (game) => {
+                console.log(game);
+                User.findOneAndUpdate({ userName: userName}, {$push: {"watchList.games": game}})
+                    .then( (user) => {
+                        res.redirect('/profile');
+                    })
+                    .catch(console.error);
+            })
+            .catch(console.error);
+    } else {
+        res.redirect('/profile')
+    }
 })
 
 
@@ -86,15 +91,14 @@ router.put('/:grab/game/watchlist', (req, res) => {
 router.put('/:grab/game/:com', (req, res) => {
     const id = req.params.grab;
     const com = req.params.com;
-    // const commentsIndex = `comments.${com}`;
+
     Games.findOneAndUpdate({ _id: id}, {$pull: { comments: com }})
         .then( () => {
-            // res.redirect('./movies/movie')
+   
             Games.findById(id)
                 .then((game) => {
-                    // res.json(movie)
+     
                     res.render('./games/game', { game: game })
-                    // res.redirect('./movies/movie')
                 })
         })
         .catch(console.error);

@@ -57,7 +57,6 @@ router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
     // sesion login attemp 3 
     successRedirect: '/profile',
     failureRedirect: '/profile/login/failure',
-    // failureRender: './error-pages/wronglog',
     failureFlash: true
 }))
       
@@ -118,14 +117,14 @@ router.put('/login', checkAuthenticated, (req, res) => {
         .then( (movie) => {
             User.findOneAndUpdate({ userName: req.user.userName}, {$push: {favMovieList: movie}})
                 .then( (user) => {
-                    // res.render('./profile/profile', { user : user })
-                    res.redirect('/profile/login')
-                   
+                 
+                    res.redirect('/profile/login') 
                 })
                 .catch(console.error);
         })
         .catch(console.error);
 })
+
 
 //remove fav movie 
 router.put('/login/:movieId/moviedel', checkAuthenticated, (req, res) => {
@@ -134,7 +133,6 @@ router.put('/login/:movieId/moviedel', checkAuthenticated, (req, res) => {
         .then( (movie) => {
             User.findOneAndUpdate({ userName: req.user.userName}, {$pull: {favMovieList: movie}})
                 .then( (user) => {
-                    // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
                 })
                 .catch(console.error);
@@ -156,7 +154,6 @@ router.put('/login/tvshow', checkAuthenticated, (req, res) => {
         .then( (tvshow) => {
             User.findOneAndUpdate({ userName: req.user.userName}, {$push: {favTvshowList: tvshow}})
                 .then( (user) => {
-                    // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
                 })
                 .catch(console.error);
@@ -171,7 +168,6 @@ router.put('/login/:tvshowId/tvshowdel', checkAuthenticated, (req, res) => {
         .then( (tvshow) => {
             User.findOneAndUpdate({ userName: req.user.userName}, {$pull: {favTvshowList: tvshow}})
                 .then( (user) => {
-                    // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
                 })
                 .catch(console.error);
@@ -192,7 +188,6 @@ router.put('/login/game', checkAuthenticated, (req, res) => {
         .then( (game) => {
             User.findOneAndUpdate({ userName: req.user.userName}, {$push: {favGameList: game }})
                 .then( (user) => {
-                    // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
                 })
                 .catch(console.error);
@@ -207,7 +202,6 @@ router.put('/login/:gameId/gamedel', checkAuthenticated, (req, res) => {
         .then( (game) => {
             User.findOneAndUpdate({ userName: req.user.userName}, {$pull: {favGameList: game }})
                 .then( (user) => {
-                    // res.render('./profile/profile', { user : user })
                     res.redirect('/profile/login')
                 })
                 .catch(console.error);
@@ -309,9 +303,6 @@ function checkNotAuthenticated(req, res, next){
     }
     next();
 }
-
-
-
 
 
 
