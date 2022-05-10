@@ -3,7 +3,7 @@ Star Wars Social. Where all star wars fans come to unite. All star wars fans big
 
 Fall in love with Star Wars Social here: [StarWars Social](https://starwars-social.herokuapp.com/movies)
 
-## Using [JavaScript, Node.js, EJS, Express, MongoDB, Mongooose, Bootstrap]
+## Using: [JavaScript, Node.js, EJS, Express, MongoDB, Mongooose, Passport, Passport-local, Bcrypt, Express-session, Bootstrap]
 
 ## MVP We have:
 - A page for all SW movies. 
