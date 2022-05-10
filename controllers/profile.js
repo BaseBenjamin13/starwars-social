@@ -22,6 +22,18 @@ initializePassport(
     id => users.find(user => user.id === id)
 )
 
+
+router.use(flash());
+router.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+
 let users = [];
 User.find()
     .then((usersR) => {
