@@ -105,8 +105,16 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
             gender: req.body.gender,
             profileImg: req.body.profileImg,
         })
-        res.redirect('/profile/login');
-        return users = User.find();
+        .then( () => {
+            
+            User.find()
+            .then((usersR) => {
+                res.redirect('/profile/login');
+                return users = usersR;
+            })
+            .catch(console.error);
+        })
+        // return users = User.find();
     } else {
         res.redirect('register/failure');
     }
