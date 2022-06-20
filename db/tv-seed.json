@@ -54,5 +54,19 @@
         },
         "likes": 230300,
         "comments": ["great show", "loved this show", "not as good as clone wars but good"]
+    },
+    {
+        "title": "Obi-Wan Kenobi",
+        "seasons": 1,
+        "episodes": 6,
+        "img": "https://i.imgur.com/6Z1aVcR.jpg",
+        "links": {
+            "buy": "https://www.starwars.com/series/obi-wan-kenobi",
+            "emTrailer": "https://www.youtube.com/embed/TWTfhyvzTx0",
+            "stream": "https://www.starwars.com/series/obi-wan-kenobi",
+            "trailer": "https://www.youtube.com/watch?v=TWTfhyvzTx0"
+        },
+        "likes": 1582072,
+        "comments": ["great show", "loved this show", "darth vader really shows off, its great"]
     }
 ]
