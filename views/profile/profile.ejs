@@ -37,12 +37,12 @@
                 <!-- could put username input -->
                 <span class="input-group-text" id="addon-wrapping">Movie</span>
                 <select type="text" class="form-control" name="favMovieList" aria-describedby="addon-wrapping">
-                    <option class="form-control" value="62afe1939b9d6e378b5bff73">The Phantom Menace</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff74">Attack of the Clones</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff75">Revenge Of The Sith</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff76">A New Hope</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff77">he Empire Strikes Back</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff78">Return Of The Jedi</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bde">The Phantom Menace</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bdf">Attack of the Clones</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63be0">Revenge Of The Sith</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63be1">A New Hope</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63be2">he Empire Strikes Back</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63be3">Return Of The Jedi</option>
                 </select>
            
             </div>
@@ -63,11 +63,11 @@
                 <span class="input-group-text" id="addon-wrapping">Tv-Show</span>
                 <!-- <input type="text" class="form-control" name="favTvshowList" placeholder="Tv-Show ID" aria-describedby="addon-wrapping"> -->
                 <select type="text" class="form-control" name="favTvshowList" aria-describedby="addon-wrapping">
-                    <option class="form-control" value="62afe1939b9d6e378b5bff7a">Clone Wars</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff7b">The Mandalorian</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff7c">The Book Of Boba Fett</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff7d">The Bad Batch</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff7e">Obi-Wan Kenobi</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bd8">Clone Wars</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bd9">The Mandalorian</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bda">The Book Of Boba Fett</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bdb">The Bad Batch</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bdc">Obi-Wan Kenobi</option>
                 </select>
             </div>
             <br>
@@ -83,10 +83,10 @@
                 <span class="input-group-text" id="addon-wrapping">Game</span>
                 <!-- <input type="text" class="form-control" name="favGameList" placeholder="Game ID" aria-label="Username" aria-describedby="addon-wrapping"> -->
                 <select type="text" class="form-control" name="favGameList" aria-describedby="addon-wrapping">
-                    <option class="form-control" value="62afe1939b9d6e378b5bff80">The Phantom Menace</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff81">The Force Unleashed</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff82">Battlefront II (2005 video game)</option>
-                    <option class="form-control" value="62afe1939b9d6e378b5bff83">Republic Commando</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bd3">The Phantom Menace</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bd4">The Force Unleashed</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bd5">Battlefront II (2005 video game)</option>
+                    <option class="form-control" value="63b0ad3ff2e77393dbc63bd6">Republic Commando</option>
                 </select>
             </div>
             <br>
@@ -104,35 +104,39 @@
     
     <!-- Movies -->
     <% for(let i=0; i < user.favMovieList.length; i++){ %>
-        <div class="item container-sm" >
-            <a href='/movies/<%=user.favMovieList[i]._id %>/movie'>
-                <h1><%=user.favMovieList[i].title %></h1>
-            </a>
-            <img src="<%=user.favMovieList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
-            <br>
-            <form action="/profile/login/<%=user.favMovieList[i]._id %>/moviedel/?_method=put" method="POST" class="d-inline">
-                <input type="submit" value="Delete" name="delete" class="btn btn-danger">
-            </form>
-        </div>
+        <%if(user.favMovieList[i]) { %>
+            <div class="item container-sm" >
+                <a href='/movies/<%=user.favMovieList[i]._id %>/movie'>
+                    <h1><%=user.favMovieList[i].title %></h1>
+                </a>
+                <img src="<%=user.favMovieList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+                <br>
+                <form action="/profile/login/<%=user.favMovieList[i]._id %>/moviedel/?_method=put" method="POST" class="d-inline">
+                    <input type="submit" value="Delete" name="delete" class="btn btn-danger">
+                </form>
+            </div>
+        <% } %>    
     <% } %>       
     
     <!-- Tv-shows -->
     <% for(let i=0; i < user.favTvshowList.length; i++){ %>
-        <div class="item container-sm" >
-            <a href='/tv-shows/<%=user.favTvshowList[i]._id %>/tvshow'>
-                <h1><%=user.favTvshowList[i].title %></h1>
-            </a>
-            <img src="<%=user.favTvshowList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
-            <br>
-            <form action="/profile/login/<%=user.favTvshowList[i]._id %>/tvshowdel/?_method=put" method="POST" class="d-inline">
-                <input type="submit" value="Delete" name="delete" class="btn btn-danger">
-            </form>
-        </div>
+        <%if(user.favTvshowList[i]) { %>
+            <div class="item container-sm" >
+                <a href='/tv-shows/<%=user.favTvshowList[i]._id %>/tvshow'>
+                    <h1><%=user.favTvshowList[i].title %></h1>
+                </a>
+                <img src="<%=user.favTvshowList[i].img %>" alt="" class=" img-fluid img-thumbnail ">
+                <br>
+                <form action="/profile/login/<%=user.favTvshowList[i]._id %>/tvshowdel/?_method=put" method="POST" class="d-inline">
+                    <input type="submit" value="Delete" name="delete" class="btn btn-danger">
+                </form>
+            </div>
+        <% } %>
     <% } %>  
 
     <!-- Games -->
     <%for(let i=0; i < user.favGameList.length; i++){ %>
-        <%if(user.favGameList[i]._id) { %>
+        <%if(user.favGameList[i]) { %>
             <div class="item container-sm" >
                 <a href='/games/<%=user.favGameList[i]._id %>/game'>
                     <h1><%=user.favGameList[i].title %></h1>
